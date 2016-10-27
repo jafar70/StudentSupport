@@ -1,0 +1,56 @@
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus{
+  color:#ff6600;
+}
+
+@media(min-width:767px) {
+    .navbar {
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+    }
+    .top-nav-collapse .navbar-default .navbar-nav > li > a{
+  color:#777;
+}
+}
+
+.navbar-default {
+    background-color:rgba(0, 0, 0, 0.9);
+    border-color:transparent;
+    font-size: 16px;
+}
+
+.navbar-default .navbar-nav > li > a{
+  padding-left: 20px;
+  padding-right: 20px;
+  color:#fff;
+  border-bottom-color: transparent;
+}
+
+.navbar-default .navbar-brand{
+  color: #fff;
+}
+.navbar-default.top-nav-collapse .navbar-brand, .navbar-default.top-nav-collapse .navbar-nav a{
+  color: #777;
+}
+
+.top-nav-collapse {
+    background:#F8F8F8;
+    padding: 0;
+    font-size: 17px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: black;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus{
+    background: transparent;
+    font-weight: bold;
+    color: #ff6600;
+}

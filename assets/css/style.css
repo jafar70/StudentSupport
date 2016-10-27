@@ -1,0 +1,185 @@
+
+.homepage-hero-module {
+  border-right: none;
+  border-left: none;
+  position: relative;
+  margin-top: 0px;
+}
+.no-video .video-container video,
+.touch .video-container video {
+  display: none;
+}
+.no-video .video-container .poster,
+.touch .video-container .poster {
+  display: block !important;
+}
+.video-container {
+  position: relative;
+  bottom: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+}
+.video-container .poster img {
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+}
+.video-container .filter {
+  z-index: 100;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+}
+.video-container .title-container {
+  z-index: 1000;
+  position: absolute;
+  top: 35%;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+.video-container .description .inner {
+  font-size: 1em;
+  width: 45%;
+  margin: 0 auto;
+}
+.video-container .link {
+  position: absolute;
+  bottom: 3em;
+  width: 100%;
+  text-align: center;
+  z-index: 1001;
+  font-size: 2em;
+  color: #fff;
+}
+.video-container .link a {
+  color: #fff;
+}
+.video-container video {
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+}
+.video-container video.fillWidth {
+  width: 100%;
+}
+
+.services{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.headline> h1{
+    font-size: 100px; 
+    line-height: 63px; 
+    font-weight: 600; 
+    border-bottom: solid 2px #fff; 
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top: solid 2px #fff; 
+    display: inline-block; 
+    overflow:auto;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .headline > h1{
+        font-size:40px;
+    }
+    .video-container .description .inner >p {
+        font-size: 20px;
+    }
+}
+
+.inner > p{
+    font-size: 30px; 
+    font-weight: 400;
+}
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+@media screen and (min-width: 768px) {
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 50px;
+  }
+}
+
+.intro-aboutus{
+    background-color: #e7e7e7;
+    padding-bottom: 60px;
+    padding-top: 20px;
+}
+
+.featurette-image{
+    margin-top: 50px;
+}
+
+.career{
+     padding-bottom: 60px;
+    padding-top: 60px;
+}
+
+.button{
+    border-style: solid;
+    padding: 15px;
+    font-size:16px;
+    color: #262626;
+    font-weight: bolder;
+}
+
+.button:hover,
+.button:focus{
+    text-decoration: none;
+    color: #ff6600;
+}
+
+.parallax-container {
+    min-height: 260px;
+    background: transparent;
+    padding-bottom: 20px;
+}
+
+.integers{
+    font-size: 50px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.stat-title{
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.facts-title{
+    font-size: 60px;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.stat-one, .stat-two, .stat-three, .stat-four{
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
