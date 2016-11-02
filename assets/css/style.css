@@ -364,3 +364,65 @@ a.socialIcon:hover, .socialHoverClass {
     background: rgba(0, 0, 0, 0.9);
     display:inline-block;
 }
+
+.parallax-aboutus{
+    padding-top: 70px;
+	padding-bottom: 60px;
+	color: white;
+}
+
+.aboutusPara{
+    min-height: 300px;
+    background: transparent;
+    margin-top: 0px;
+}
+
+.parallax-title{
+    padding-top: 130px;
+	color: white;
+}
+
+.bground{
+    background: #DFDFDF;
+}
+
+.body-white{
+    background-color: white;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px 60px 60px 60px;
+}
+
+.services-list > li{
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+.body-white{
+    font-size: 16px;
+}
+
+.wecan-list{
+    list-style-image: url('https://cdn0.iconfinder.com/data/icons/free-misc-icon-set-1/512/check-16.png');
+}
+
+.nodo-list{
+    list-style-image: url('http://www.lavishalice.com/media/stick_close.png');
+}
+
+.title-line{
+    border: 0;
+    width: 100%;
+    color: #DFDFDF;
+    background-color: #DFDFDF;
+    height: 4px;
+}
+
+.house-title{
+    margin-top: 50px;
+}
+
+.nodo-title{
+    margin-top:25px;
+}
