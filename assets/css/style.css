@@ -392,8 +392,7 @@ a.socialIcon:hover, .socialHoverClass {
     margin-bottom: 50px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 20px 60px 60px 60px;
-    font-size: 16px;
-    
+    font-size: 16px;  
 }
 
 .services-list > li{
@@ -427,8 +426,8 @@ a.socialIcon:hover, .socialHoverClass {
     margin-top:25px;
 }
 
-@media(min-width:480px) {
-    .body-white {
-       
+@media(max-width: 480px) {
+    .body-white{
+        padding: 20px 30px 60px 30px;  
     }
 }
