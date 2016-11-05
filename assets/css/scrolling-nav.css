@@ -9,6 +9,7 @@
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
         transition: background .5s ease-in-out,padding .5s ease-in-out;
+         border: 0;
     }
 
     .top-nav-collapse {
@@ -23,6 +24,7 @@
     background-color:rgba(0, 0, 0, 0.9);
     border-color:transparent;
     font-size: 16px;
+    border: 0;
 }
 
 .navbar-default .navbar-nav > li > a{
