@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Support</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/scrolling-nav.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/hover-min.css') }}">
+    <script src="https://use.fontawesome.com/eee93ac27c.js"></script>
+</head>
+
+<body>
+
+    <!-- child template -->
+    {% block content %}{% endblock %}
+
+    <!-- errors -->
+    {% if error %}
+      <p class="error"><strong>Error:</strong> {{ error }}</p>
+    {% endif %}
+
+    <!-- messages -->
+    {% for message in get_flashed_messages() %}
+      {{ message }}
+    {% endfor %}
+    
+
+    <footer id="footerWrapper">
+        <section id="mainFooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="footerWidget">
+                            <br>
+                            <img src="{{ url_for('static', filename='img/CU-Logo.png') }}" alt="latest Little Neko news" id="footerLogo">
+                            <p>Coventry University is a University. Proin et augue vel nisi rhoncus tincidunt. Cras venenatis, magna id sem ipsum mi interdumlProin et augue vel nisi rhoncus tincidunt. Cras venenatis, magna id sem ipsum mi interduml </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="footerWidget">
+
+                            <h3>Coventry University</h3>
+                            <address>
+							<p> <i class="icon-location"></i>Gulson Road, <br>
+								Coventry,CV1 2JH UK <br>
+								<i class="icon-phone"></i>02477653564 <br>
+								<i class="icon-mail-alt"></i><a href="mailto:cem.facultyregistry.eec@coventry.ac.uk	">cem.facultyregistry.eec@coventry.ac.uk</a></p>
+				        </address>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="footerWidget">
+                            <h3>Follow us, we are social</h3>
+                            <ul class="social-network social-circle">
+
+                                <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="footerRights">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Copyright © 2016 <a href="http://www.little-neko.com" target="blank"> Coventry University</a> / All rights reserved.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </footer>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script> 
+    <script src="{{ url_for('static', filename='js/parallax.min.js') }}"></script> 
+    <script src="{{ url_for('static', filename='js/scrolling-nav.js') }}"></script> 
+    <script src="{{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script> 
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script>
+        jQuery(document).ready(function($) {
+            $('.counter').counterUp({
+                delay: 100,
+                time: 2000
+            });
+        });
+    </script>
+
+</body>
+
+</html>

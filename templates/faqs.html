@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <body class="bground">
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Student Support</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse ">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/aboutus">About Us</a></li>
+                    <li class="active"><a href="/faqs">FAQ'S</a></li>
+                    <li><a href="#">Availability</a></li>
+                    <li><a href="#">Live Chat</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./">Register <span class="sr-only">(current)</span></a></li>
+                    <li><a href="/login">Login <span class="sr-only">(current)</span></a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+        <!--/.container-fluid -->
+    </nav>
+    
+    <div class="parallax-container aboutusPara" data-parallax="scroll" data-bleed="10" data-image-src="{{ url_for('static', filename='img/RAICO-Coventry-University-2.jpg') }}" data-natural-width="750" data-natural-height="763">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h1 class="parallax-title" style="font-size:60px;">FAQ'S</h1>
+            </div>
+          </div>
+        </div>
+        <br>
+    </div>
+
+    <div class="container">
+        <div class="container body-white">
+            <div class="row">
+                <h1 class="text-center">FAQ'S</h1>
+                <hr class="title-line">
+                <h3>What is the Math Academic Center?</h3>
+                <p>The Math Center is part of the Mathematics and Writing Academic Center, located in 222 SSB.&#160; The Math Center is a free, walk-in tutorial service which offers assistance to students in math courses.&#160; No appointments are needed; students are helped on a first-come, first-served basis. Because the lab is designed to assist as many students as possible, we cannot offer extensive, one-on-one tutoring.&#160;If you need extensive tutoring, you may want to consider hiring a private tutor. (See "How can I hire a private tutor?" below.)</p>
+                <br>
+                <h3>Why should I come to the Math Academic Center?</h3>
+                <p>If you're currently enrolled in a math course, the Math Center is a good place to sit and do your homework.&#160;&#160;If you have any questions on your homework assignment, a tutor will be available to answer them for you.&#160;&#160;Having your questions answered while you are doing your homework will allow you to finish your assignments in less time and with less frustration.</p>
+                <p>If you're having trouble understanding the material that's being covered in class, our tutors can give you a quick review of the mathematical concepts that are important to better understanding.&#160;&#160;The Math Center is not a substitute for class.</p>
+                <p>If you are preparing for a math assessment test, we can help you understand and review your test preparation materials.</p>
+                <br>
+                <h3>Who works in the Math Academic Center?</h3>
+                <p>Math Academic Center tutors are graduate and undergraduate UMSL students who are majoring in math, education, business, computer science, physics, and other fields of study.&#160;&#160;A full-time faculty member supervises the Math Center.</p>
+                <br>
+                <h3>What happens when I come to the Math Academic Center?</h3>
+                <p>Once you are in the Math Center, feel free to make yourself comfortable at a table.&#160; Many students use the lab as a convenient place to do their homework, so it's not unusual to see students quietly working on their own in the Math Center. If you have a question, don't hesitate to ask one of our tutors.&#160; Even though they sometimes seem preoccupied with other things, our tutors are always ready and willing to help answer your questions.</p>
+                <p>The Math Center is a place where active learning occurs. If you like to be in stony silence while you study, you may find the discussions taking place around you in the lab are a distraction.&#160; If you need complete silence to study, the Math Center is still a good place to get your math questions answered, but you may decide your intensive studying is better done in a place like the library.</p>
+                <br>
+                <h3>How can I use the Math Academic Center's computers?</h3>
+                <p>Computer use is also on a first-come, first-served basis.&#160; There are a few rules that you need to keep in mind when using our computers:</p>
+                <p>When working with any computer, it is always wise to save your work often.&#160; If your computer locks up or the system goes down, any unsaved work will be lost.&#160; Bring your own memory storage device to save your work.</p>
+                <p>Students are unable to print in the Math Center.&#160; If you need to print your work, the closest computer lab for printing purposes is 103 SSB.&#160;</p>
+                <br>
+                <h3>When should I come to the Math Academic Center?</h3>
+                <p>You are welcome to visit the Math Center any time it is open.&#160; Why not make the Math Center a regular part of your study routine?&#160; Then when test time comes, you won't have to do any frantic, last minute cramming; you already will be relaxed and ready for the test.&#160;</p>
+                <p>As you might suspect, the Math Center tends to be busier during the testing periods (usually the fourth, eighth, and the twelfth weeks of the semester).&#160; Keep in mind that when the Math Center is busier our tutors must divide their time among more students, so you may not be able to get as much individual attention during those times.</p>
+                <br>
+                <h3>How can I hire a private tutor?</h3>
+                <p>The Department of Mathematics and Computer Science maintains a list of students qualified to tutor in specific courses.&#160;The terms of your tutoring, including meeting arrangements and rate of pay, must be negotiated between you and your private tutor.&#160;&#160;The Department of Mathematics of Computer Science merely maintains the list of approved tutors and disclaims any further responsibility.</p>
+                <br>
+                <h3>Where is the Math Academic Center?</h3>
+                <p>The Math Center is&#160;located in 222 SSB.&#160;</p>
+                <br>
+                <h3>Contact Information for Math Academic Center Supervisor</h3>
+                <p>Al Stanger, <a href="mailto:stangera@umsl.edu">stangera@umsl.edu</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

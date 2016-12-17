@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block content %}
+
+   <body class="bground">
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Student Support</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse ">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li class="active"><a href="/aboutus">About Us</a></li>
+                    <li><a href="/faqs">FAQ'S</a></li>
+                    <li><a href="#">Availability</a></li>
+                    <li><a href="#">Live Chat</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./">Register <span class="sr-only">(current)</span></a></li>
+                    <li><a href="/login">Login <span class="sr-only">(current)</span></a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+        <!--/.container-fluid -->
+    </nav>
+    
+    <div class="parallax-container aboutusPara" data-parallax="scroll" data-bleed="10" data-image-src="{{ url_for('static', filename='img/RAICO-Coventry-University-2.jpg') }}" data-natural-width="750" data-natural-height="763">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h1 class="parallax-title" style="font-size:60px;">About Us</h1>
+            </div>
+          </div>
+        </div>
+        <br>
+    </div>
+
+    <div class="container">
+       <div class="container body-white">
+        <div class="row">
+            <h1 class="text-center">Theta, Maths and Programming Support</h1>
+            <hr class="title-line">
+            <p class="lead">Usually the Theta, Maths and Programming Support is free, open to all students at the university, and we offer the following services:</p>
+            <ul class="services-list">
+                <li>Drop-in sessions (Term Time) - 1 hour slots for quick guidance on progamming, mathematics or statistics;</li>
+                <li>A quiet place to study;</li>
+                <li>Textbooks and IT resources;</li>
+                <li>Online resources - for when you can't use the Centre;</li>
+                <li>Work sheets to take away and core textbooks for reference, covering every aspect of mathematics;</li>
+                <li>A team of friendly tutors who are skilled teachers and include experts in most areas where maths is used;</li>
+            </ul>
+            
+            <h1 class="text-center house-title">House Rules</h1>
+            <hr class="title-line">
+            <p class="lead">We can:</p>
+            <ul class="services-list wecan-list">
+                <li>Help with mathematics and statistics topics generally;</li>
+                <li>Advise before you start a major project;</li>
+                <li>Advise how to approach tricky numerical problems;</li>
+                <li>Point you to useful resources;</li>
+                <li>Support you with extra sessions if need be;</li>
+            </ul>
+            
+            <p class="lead nodo-title">We do not:</p>
+            <ul class="services-list nodo-list">
+                <li>Help answer specific assessed questions;</li>
+                <li>Allow you to book multiple appointments. Book only one. If you need more help, the tutor will advise you on this.;</li>
+            </ul>
+            <br>
+            <p>Login to view the availability of the lecturers</p>
+        </div>
+        </div>
+    </div>
+    
+    </body>
+
+   
+ 
+{% endblock %}
