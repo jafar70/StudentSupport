@@ -39,6 +39,22 @@ def aboutus():
 @app.route('/faqs')
 def faqs():
     return render_template('faqs.html')  # render a template
+    
+@app.route('/livechat')
+@login_required
+def livechat():
+    # return "Hello, World!"  # return a string
+    g.db = connect_db()
+    cur = g.db.execute('select * from posts')
+
+    posts = []
+    for row in cur.fetchall():
+        posts.append(dict(title=row[0], description=row[1]))
+
+    # posts = [dict(title=row[0], description=row[1]) for row in cur.fetchall()]
+
+    g.db.close()
+    return render_template('livechat.html', posts=posts)  # render a template
 
 # route for handling the login page logic
 @app.route('/login', methods=['GET', 'POST'])

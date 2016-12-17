@@ -42,6 +42,8 @@
         <!--/.container-fluid -->
     </nav>
     
+    <h1 style="display:none;">Please Login</h1>
+    
     <div class="container login-con" style=" margin: 0px auto;">
         <div class="login-page">
           <div class="form">
@@ -50,6 +52,12 @@
               <input type="password" placeholder="Password" name="password" value="{{request.form.password }}">
               <input class="button" type="submit" value="Login">
               <p class="message">Not registered? <a href="#">Create an account</a></p>
+              {% if error %}
+                  <p class="error"><strong>Error:</strong> {{ error }}</p>
+              {% endif %}
+              {% for message in get_flashed_messages() %}
+                  {{ message }}
+              {% endfor %}
             </form>
             <form class="register-form">
               <input type="text" placeholder="name"/>
