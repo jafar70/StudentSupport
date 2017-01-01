@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <body class="bground" height="100%">
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Student Support</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse ">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/aboutus">About Us</a></li>
+                    <li><a href="/faqs">FAQ'S</a></li>
+                    <li><a href="/availability">Availability</a></li>
+                    <li class="active"><a href="/Quiz">Quiz</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if session['logged_in'] == True %}
+                    <li><a href="/logout">Logout <span class="sr-only">(current)</span></a></li>
+                    {% else %}
+                    <li><a href="/login">Login <span class="sr-only">(current)</span></a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+        <!--/.container-fluid -->
+    </nav>
+    
+    <div class="parallax-container aboutusPara" data-parallax="scroll" data-bleed="10" data-image-src="{{ url_for('static', filename='img/RAICO-Coventry-University-2.jpg') }}" data-natural-width="750" data-natural-height="763">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h1 class="parallax-title" style="font-size:60px;">Quiz</h1>
+            </div>
+          </div>
+        </div>
+        <br>
+    </div>
+
+    <div class="container">
+        <div class="container body-white">
+            <div class="row">
+                <h1 class="text-center">Enter Quiz!</h1>
+                <hr class="title-line">
+                {% for id, name in quiz_names %}
+                    <li><a href="{{url_for('quiz', id=id)}}">{{name}}</a></li>
+                {% endfor %}
+                <br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <body class="bground">
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Student Support</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse ">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/aboutus">About Us</a></li>
+                    <li><a href="/faqs">FAQ'S</a></li>
+                    <li><a href="/availability">Availability</a></li>
+                    <li class="active"><a href="/Quiz">Quiz</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if session['logged_in'] == True %}
+                    <li><a href="/logout">Logout <span class="sr-only">(current)</span></a></li>
+                    {% else %}
+                    <li><a href="/login">Login <span class="sr-only">(current)</span></a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+        <!--/.container-fluid -->
+    </nav>
+    
+    <style type="text/css">
+        .question-correct:after {
+            content: "✓";
+            font-size: 30px;
+            color: green;
+            padding-left: 10px;
+        }
+
+        .question-incorrect:after {
+            content: "✗";
+            font-size: 30px;
+            color: red;
+            padding-left: 10px;
+        }
+    </style>
+    
+    <div class="parallax-container aboutusPara" data-parallax="scroll" data-bleed="10" data-image-src="{{ url_for('static', filename='img/RAICO-Coventry-University-2.jpg') }}" data-natural-width="750" data-natural-height="763">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h1 class="parallax-title" style="font-size:60px;">Quiz</h1>
+            </div>
+          </div>
+        </div>
+        <br>
+    </div>
+
+    <div class="container">
+        <div class="container body-white">
+            <div class="row">
+                <h1 class="text-center">{% block page_title %}{{quiz['name']}} - Checking ({{correct}} / {{total}}){% endblock %}</h1>
+                <hr class="title-line">
+                {% block questions %}
+                    {% for question, choice in question_answer %}
+                        <div>
+                            <h4 {% if choice[1] %} class="question-correct" {% else %} class="question-incorrect" {% endif %}>{{question['text']|safe}}</h4>
+                            {% for answer in question['options'] %}
+                                <p {% if answer[1] %} class="question-correct" {% elif not answer[1] %} class="question-incorrect" {% endif %}>
+                                    {{answer[0]|safe}} {% if answer == choice %} - <strong> Chosen </strong> {% endif %}
+                                </p>
+                            {% endfor %}
+                        </div>
+                        {% if loop.revindex0 > 0 %}
+                            <hr />
+                        {% endif %}
+                    {% endfor %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}                                                        

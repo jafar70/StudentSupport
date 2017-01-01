@@ -30,12 +30,15 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/aboutus">About Us</a></li>
                     <li><a href="/faqs">FAQ'S</a></li>
-                    <li><a href="#">Availability</a></li>
-                    <li><a href="#">Quiz</a></li>
+                    <li><a href="/availability">Availability</a></li>
+                    <li><a href="/Quiz">Quiz</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="./">Register <span class="sr-only">(current)</span></a></li>
-                    <li  class="active"><a href="/login">Login <span class="sr-only">(current)</span></a></li>
+                    {% if session['logged_in'] == True %}
+                    <li><a href="/logout">Logout <span class="sr-only">(current)</span></a></li>
+                    {% else %}
+                    <li><a href="/login">Login <span class="sr-only">(current)</span></a></li>
+                    {% endif %}
                 </ul>
             </div>
             <!--/.nav-collapse -->
@@ -54,10 +57,10 @@
               <input class="button" type="submit" value="Login">
               <p class="message">Not registered? <a href="#">Create an account</a></p>
               {% if error %}
-                  <p class="error"><strong>Error:</strong> {{ error }}</p>
+                  <p style="color:white;" class="error"><strong>Error:</strong> {{ error }}</p>
               {% endif %}
               {% for message in get_flashed_messages() %}
-                  {{ message }}
+                  <p style="color:white;">{{ message }}</p>
               {% endfor %}
             </form>
             <form class="register-form">

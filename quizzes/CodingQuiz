@@ -1,0 +1,44 @@
+{
+	"name": "Web Development Quiz",
+	"description": "This MCQ is about basic web development. Quiz yourself before you run the test!",
+	"questions": [{
+		"text": "What does HTML stand for?",
+		"options": [
+			["Hyperlinks and Text Markup Language", false],
+			["Hyper Text Markup Language", true],
+			["Home Tool Markup Language", false]
+		]
+	}, {
+		"text": "Who is making the Web standards?",
+		"options": [
+			["Google", false],
+			["Microsoft", false],
+			["The World Wide Web Consortium", true],
+			["Mozilla", false]
+		]
+	}, {
+		"text": "How do you write 'Hello World' in an alert box?",
+		"options": [
+			["alert('Hello World');", true],
+			["msgBox('Hello World');", false],
+			["alertBox('Hello World');", false],
+			["msg('Hello World');", false]
+		]
+	},{
+		"text": "How do you create a function in JavaScript?",
+		"options": [
+			["function = myFunction()", false],
+			["function:myFunction()", false],
+			["function myFunction()", true],
+			["myFunction()", false]
+		]
+	}, {
+		"text": "Which is the correct CSS syntax?",
+		"options": [
+			["{body;color:black;}", false],
+			["{body:color=black;}", false],
+			["body {color: black;}", true],
+			["body:color=black;", false]
+		]
+	}]
+}

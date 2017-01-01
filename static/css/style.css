@@ -500,3 +500,18 @@ a.socialIcon:hover, .socialHoverClass {
   display: none;
 }
 
+.question-correct:after {
+    content: "✓";
+    font-size: 30px;
+    color: green;
+    padding-left: 10px;
+}
+
+.question-incorrect:after {
+    content: "✗";
+    font-size: 30px;
+    color: red;
+    padding-left: 10px;
+}
+
+
