@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <body class="bground" height="100%">
+    <body class="bground">
     <!-- Static navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -21,8 +21,8 @@
                     <li><a href="/faqs">FAQ'S</a></li>
                     <li><a href="/availability">Availability</a></li>
                     {% if session['logged_in'] == True %}
-                    <li><a href="/timetable">Timetable</a></li>
-                    <li class="active"><a href="/Quiz">Quiz</a></li>
+                    <li class="active"><a href="/timetable">Timetable</a></li>
+                    <li><a href="/Quiz">Quiz</a></li>
                     {% else %}
                     {% endif %}
                 </ul>
@@ -43,7 +43,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-center">
-              <h1 class="parallax-title" style="font-size:60px;">Quiz</h1>
+              <h1 class="parallax-title" style="font-size:60px;">Timetable</h1>
             </div>
           </div>
         </div>
@@ -53,13 +53,11 @@
     <div class="container">
         <div class="container body-white">
             <div class="row">
-                <h1 class="text-center">Enter Quiz!</h1>
+                <h1 class="text-center">Schedule</h1>
                 <hr class="title-line">
-                {% for id, name in quiz_names %}
-                    <li><a href="{{url_for('quiz', id=id)}}">{{name}}</a></li>
-                {% endfor %}
-                <br><br><br><br><br><br><br><br>
+                <img class="img-responsive" src="{{ url_for('static', filename='img/timetablesemester1.png') }}"></img> 
             </div>
         </div>
     </div>
 {% endblock %}
+

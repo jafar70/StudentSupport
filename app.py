@@ -91,6 +91,10 @@ def aboutus():
 def faqs():
     return render_template('faqs.html')  # render a template
     
+@app.route('/timetable')
+def timetable():
+    return render_template('timetable.html')  # render a template
+    
 @app.route('/availability')
 @login_required
 def availability():

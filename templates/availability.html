@@ -20,7 +20,11 @@
                     <li><a href="/aboutus">About Us</a></li>
                     <li><a href="/faqs">FAQ'S</a></li>
                     <li class="active"><a href="/availability">Availability</a></li>
+                    {% if session['logged_in'] == True %}
+                    <li><a href="/timetable">Timetable</a></li>
                     <li><a href="/Quiz">Quiz</a></li>
+                    {% else %}
+                    {% endif %}
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if session['logged_in'] == True %}
@@ -58,9 +62,765 @@
                 {% for message in get_flashed_messages() %}
                   {{ message }}
                 {% endfor %}
-                <h1 class="text-center">Schedule</h1>
+                <h1 class="text-center">Course Directors</h1>
                 <hr class="title-line">
-                
+                <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>Tutor Details</th>
+                        <th>Office Hours</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=32384"><img src="https://secure.gravatar.com/avatar/09c4277dd573be793e02fb20af74d9ae?s=100&amp;d=identicon" alt="Picture of Parveen Samra" title="Picture of Parveen Samra" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Parveen Samra</div><div class="tutorprofileemail"><a href="mailto:csx223@coventry.ac.uk">csx223@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;"><p>My Sigma Hours available at the following link computing.coventry.ac.uk/sigma</p></td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=42568"><img src="https://secure.gravatar.com/avatar/29a7d124d162ac38ab832dad83b44967?s=100&amp;d=identicon" alt="Picture of Colin Stephen" title="Picture of Colin Stephen" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Colin Stephen</div><div class="tutorprofileemail"><a href="mailto:ab5169@coventry.ac.uk">ab5169@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=31852"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/93041/user/icon/adaptable/f1?rev=606125" alt="Dr Craig Stewart" title="Dr Craig Stewart" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Craig Stewart</div><div class="tutorprofileemail"><a href="mailto:ab4491@coventry.ac.uk">ab4491@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=27029"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/60723/user/icon/adaptable/f1?rev=22682" alt="Picture of Peter Every" title="Picture of Peter Every" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Peter Every</div><div class="tutorprofileemail"><a href="mailto:csx241@coventry.ac.uk">csx241@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">Sigma+ Availability: TBC.  I try to respond to email on the same day (not always successfully)</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=69212"><img src="https://secure.gravatar.com/avatar/20fe24fac34f928ee5e31ab0477815d6?s=100&amp;d=identicon" alt="Picture of Victor Sanchez-Anguix" title="Picture of Victor Sanchez-Anguix" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Victor Sanchez-Anguix</div><div class="tutorprofileemail"><a href="mailto:ac0872@coventry.ac.uk">ac0872@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=70065"><img src="https://secure.gravatar.com/avatar/30e8ccdb69f53884ba3d1a36bd949cbb?s=100&amp;d=identicon" alt="Picture of Jianbing Ma" title="Picture of Jianbing Ma" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Jianbing Ma</div><div class="tutorprofileemail"><a href="mailto:ac1023@coventry.ac.uk">ac1023@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=31933"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/94304/user/icon/adaptable/f1?rev=1630088" alt="Picture of Stella-Maris Orim" title="Picture of Stella-Maris Orim" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Stella-Maris Orim</div><div class="tutorprofileemail"><a href="mailto:aa7863@coventry.ac.uk">aa7863@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;"><p id="yui_3_17_2_2_1472716885522_316">THETA Drop in hours at ECG-12 (behind Starbucks) Thursdays 9:00 - 11:00 am</p>
+                        <p>Please note that Email is the quickest way to contact me.</p>
+                        <p>S.Orim@coventry.ac.uk</p></td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=33806"><img src="https://secure.gravatar.com/avatar/efe857184606d225982d5d9032b56459?s=100&amp;d=identicon" alt="Picture of Michael Odetayo" title="Picture of Michael Odetayo" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Michael Odetayo</div><div class="tutorprofileemail"><a href="mailto:csx190@coventry.ac.uk">csx190@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0 lastrow">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=57837"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/550351/user/icon/adaptable/f1?rev=5118705" alt="Picture of Diana Hintea" title="Picture of Diana Hintea" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Diana Hintea</div><div class="tutorprofileemail"><a href="mailto:ab8351@coventry.ac.uk">ab8351@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <br>
+                <br>
+                <h1 class="text-center">Main Tutors</h1>
+                <hr class="title-line">
+                <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                             <th></th>
+                            <th>Tutor Details</th>
+                            <th>Office Hours</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=28140"><img src="https://secure.gravatar.com/avatar/fb6da57dfde86317da6908f26fa62602?s=100&amp;d=identicon" alt="Picture of Angela Yale" title="Picture of Angela Yale" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Angela Yale</div><div class="tutorprofileemail"><a href="mailto:aa4183@coventry.ac.uk">aa4183@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=32170"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/102064/user/icon/adaptable/f1?rev=2500865" alt="Picture of Alex Regan" title="Picture of Alex Regan" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Alex Regan</div><div class="tutorprofileemail"><a href="mailto:aa4040@coventry.ac.uk">aa4040@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=46287"><img src="https://secure.gravatar.com/avatar/bf9e838dc32e5c1d9d01e06110e9da5f?s=100&amp;d=identicon" alt="Picture of Denise Edwards" title="Picture of Denise Edwards" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Denise Edwards</div><div class="tutorprofileemail"><a href="mailto:aa5043@coventry.ac.uk">aa5043@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=27114"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/63250/user/icon/adaptable/f1?rev=1170828" alt="Picture of Caroline Blake" title="Picture of Caroline Blake" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Caroline Blake</div><div class="tutorprofileemail"><a href="mailto:aa2065@coventry.ac.uk">aa2065@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=28147"><img src="https://secure.gravatar.com/avatar/72abae997ccc6f8c18b81ba8d4e510cf?s=100&amp;d=identicon" alt="Picture of Una Malone" title="Picture of Una Malone" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Una Malone</div><div class="tutorprofileemail"><a href="mailto:ssx263@coventry.ac.uk">ssx263@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=39642"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/235379/user/icon/adaptable/f1?rev=3521570" alt="Picture of Simon Hill" title="Picture of Simon Hill" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Simon Hill</div><div class="tutorprofileemail"><a href="mailto:aa7965@coventry.ac.uk">aa7965@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=80266"><img src="https://secure.gravatar.com/avatar/6b5aa59658cca6a33cb86640c2b5776c?s=100&amp;d=identicon" alt="Picture of Mostafa Hashem" title="Picture of Mostafa Hashem" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Mostafa Hashem</div><div class="tutorprofileemail"><a href="mailto:ac1678@coventry.ac.uk">ac1678@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=86243"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/1336593/user/icon/adaptable/f1?rev=7342260" alt="Picture of Kelly Smith" title="Picture of Kelly Smith" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Kelly Smith</div><div class="tutorprofileemail"><a href="mailto:aa7645@coventry.ac.uk">aa7645@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;"><p>My office hours are:</p>
+                        <p>Tuesdays 2pm - 3:30pm<br />Fridays 10am-11:30am</p></td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=25495"><img src="https://secure.gravatar.com/avatar/21479b5d00e3346d4b94e58da2b7de9c?s=100&amp;d=identicon" alt="Picture of Simon Hill" title="Picture of Simon Hill" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Simon Hill</div><div class="tutorprofileemail"><a href="mailto:hills10@uni.coventry.ac.uk">hills10@uni.coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=36515"><img src="https://secure.gravatar.com/avatar/fa4a11ac935b6ab089e02290cf7bdb35?s=100&amp;d=identicon" alt="Picture of Barbara Jaszczyk" title="Picture of Barbara Jaszczyk" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Barbara Jaszczyk</div><div class="tutorprofileemail"><a href="mailto:aa3993@coventry.ac.uk">aa3993@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=100689"><img src="https://secure.gravatar.com/avatar/8b2d5a88d1e32ee820b6a78e0ed8a9b9?s=100&amp;d=identicon" alt="Picture of Ian O&#039;Donnell MBE" title="Picture of Ian O&#039;Donnell MBE" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Ian O'Donnell MBE</div><div class="tutorprofileemail"><a href="mailto:ac4833@coventry.ac.uk">ac4833@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=32720"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/113075/user/icon/adaptable/f1?rev=426156" alt="Picture of Mark Tyers" title="Picture of Mark Tyers" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Mark Tyers</div><div class="tutorprofileemail"><a href="mailto:aa7401@coventry.ac.uk">aa7401@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=91437"><img src="https://secure.gravatar.com/avatar/dabf49e24dcbd6c1777856e9c9656f9e?s=100&amp;d=identicon" alt="Picture of Jianbing MA" title="Picture of Jianbing MA" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Jianbing MA</div><div class="tutorprofileemail"><a href="mailto:maj22@coventry.ac.uk">maj22@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=53142"><img src="https://secure.gravatar.com/avatar/be2441e6e4666686bb9ef69cdbd80ef4?s=100&amp;d=identicon" alt="Picture of Jianhua Yang" title="Picture of Jianhua Yang" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Jianhua Yang</div><div class="tutorprofileemail"><a href="mailto:ab7896@coventry.ac.uk">ab7896@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=87025"><img src="https://secure.gravatar.com/avatar/14ed5a99ce1430aa6f1f1f283184459f?s=100&amp;d=identicon" alt="Picture of Chia Lim" title="Picture of Chia Lim" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Chia Lim</div><div class="tutorprofileemail"><a href="mailto:ac3684@coventry.ac.uk">ac3684@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=99576"><img src="https://secure.gravatar.com/avatar/174e8a64afb41a392d758166ce422116?s=100&amp;d=identicon" alt="Picture of Alexandros Konios" title="Picture of Alexandros Konios" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Alexandros Konios</div><div class="tutorprofileemail"><a href="mailto:ac4310@coventry.ac.uk">ac4310@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=28770"><img src="https://secure.gravatar.com/avatar/4e12cfdf71397e9a9f2e00dfc698a86c?s=100&amp;d=identicon" alt="Picture of Derrick Newton" title="Picture of Derrick Newton" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Derrick Newton</div><div class="tutorprofileemail"><a href="mailto:ab3729@coventry.ac.uk">ab3729@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=41288"><img src="https://secure.gravatar.com/avatar/958d4d8cb8fdfc48aa703ee976bcdbd0?s=100&amp;d=identicon" alt="Picture of Furrkh Aslam" title="Picture of Furrkh Aslam" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Furrkh Aslam</div><div class="tutorprofileemail"><a href="mailto:csx207@coventry.ac.uk">csx207@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;"><p>Please email me <a href="mailto:f.aslam@coventry.ac.uk">f.aslam@coventry.ac.uk</a></p></td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=87919"><img src="https://secure.gravatar.com/avatar/ce48e561414d1aa6136f06ff11824921?s=100&amp;d=identicon" alt="Picture of Raymond Neo" title="Picture of Raymond Neo" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Raymond Neo</div><div class="tutorprofileemail"><a href="mailto:ac4154@coventry.ac.uk">ac4154@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1 lastrow">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=34654"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/179752/user/icon/adaptable/f1?rev=3024746" alt="Picture of Rochelle Sassman" title="Picture of Rochelle Sassman" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Rochelle Sassman</div><div class="tutorprofileemail"><a href="mailto:csx243@coventry.ac.uk">csx243@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;"><p>THETA Drop in hours at ECG-12 (behind Starbucks) :</p>
+                        <p>Tuesdays 2-3pm</p>
+                        <p>Wednesdays 2-3pm</p>
+                        <p> </p>
+                        <p>Email is the quickest way to contact me.</p>
+                        <p>csx243@coventry.ac.uk</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <br><br>
+                <h1 class="text-center">Other Tutors</h1>
+                <hr class="title-line">
+                <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Tutor Details</th>
+                            <th>Office Hours</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=315"><img src="https://secure.gravatar.com/avatar/c38bc9c96beff08338a3a34abbe426d9?s=100&amp;d=identicon" alt="Picture of Mark BENNETT" title="Picture of Mark BENNETT" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Mark BENNETT</div><div class="tutorprofileemail"><a href="mailto:benne107@coventry.ac.uk">benne107@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=487"><img src="https://secure.gravatar.com/avatar/209dceef5a31a96b211d4cc4b3eeccc4?s=100&amp;d=identicon" alt="Picture of Derrick NEWTON" title="Picture of Derrick NEWTON" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Derrick NEWTON</div><div class="tutorprofileemail"><a href="mailto:newtond6@coventry.ac.uk">newtond6@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=4032"><img src="https://secure.gravatar.com/avatar/d582e9937d61da10f6fe1379490290d2?s=100&amp;d=identicon" alt="Picture of Victor SANCHEZ" title="Picture of Victor SANCHEZ" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Victor SANCHEZ</div><div class="tutorprofileemail"><a href="mailto:sanche10@coventry.ac.uk">sanche10@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=14117"><img src="https://secure.gravatar.com/avatar/25c77a28791f9736db455b94f133a7e3?s=100&amp;d=identicon" alt="Picture of Carey PRIDGEON" title="Picture of Carey PRIDGEON" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Carey PRIDGEON</div><div class="tutorprofileemail"><a href="mailto:pridgeoc@coventry.ac.uk">pridgeoc@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=18942"><img src="https://secure.gravatar.com/avatar/a991fcce0fa7c1b2b4c35e85ac70182f?s=100&amp;d=identicon" alt="Picture of Diana HINTEA" title="Picture of Diana HINTEA" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Diana HINTEA</div><div class="tutorprofileemail"><a href="mailto:hintead@coventry.ac.uk">hintead@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=23565"><img src="https://secure.gravatar.com/avatar/d4b3df45c220d02910a2b7194ed592c9?s=100&amp;d=identicon" alt="Picture of Garikayi Brasington MADZUDZO" title="Picture of Garikayi Brasington MADZUDZO" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Garikayi Brasington MADZUDZO</div><div class="tutorprofileemail"><a href="mailto:madzudzg@coventry.ac.uk">madzudzg@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=25665"><img src="https://secure.gravatar.com/avatar/ce690921d5b97ba67b1aec30a55101ce?s=100&amp;d=identicon" alt="Picture of Terry RICHARDS" title="Picture of Terry RICHARDS" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Terry RICHARDS</div><div class="tutorprofileemail"><a href="mailto:richar63@coventry.ac.uk">richar63@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=26969"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/60431/user/icon/adaptable/f1?rev=4611634" alt="Picture of Harminder Kaur" title="Picture of Harminder Kaur" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Harminder Kaur</div><div class="tutorprofileemail"><a href="mailto:aa0127@coventry.ac.uk">aa0127@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=27097"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/62758/user/icon/adaptable/f1?rev=569726" alt="Picture of Bob Bird" title="Picture of Bob Bird" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Bob Bird</div><div class="tutorprofileemail"><a href="mailto:aa4438@coventry.ac.uk">aa4438@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;"><p>I am available in Sigma on Tuesday 9-11 and 3-4 </p></td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=27125"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/63272/user/icon/adaptable/f1?rev=4722690" alt="d&#039;oh" title="d&#039;oh" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Amanda Hardy</div><div class="tutorprofileemail"><a href="mailto:aa0284@coventry.ac.uk">aa0284@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=27282"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/63960/user/icon/adaptable/f1?rev=593544" alt="Picture of Alan Richards" title="Picture of Alan Richards" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Alan Richards</div><div class="tutorprofileemail"><a href="mailto:aa4277@coventry.ac.uk">aa4277@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=27288"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/63990/user/icon/adaptable/f1?rev=426912" alt="Picture of Xingang Wang" title="Picture of Xingang Wang" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Xingang Wang</div><div class="tutorprofileemail"><a href="mailto:aa9038@coventry.ac.uk">aa9038@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=27576"><img src="https://secure.gravatar.com/avatar/6652f4939394bc6e1263da2894895b36?s=100&amp;d=identicon" alt="Picture of Kamal BENTAHAR" title="Picture of Kamal BENTAHAR" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Kamal BENTAHAR</div><div class="tutorprofileemail"><a href="mailto:bentahak@coventry.ac.uk">bentahak@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=27765"><img src="https://secure.gravatar.com/avatar/79c2d85a001c31022702f45382e43128?s=100&amp;d=identicon" alt="Picture of Reda Al Bodour" title="Picture of Reda Al Bodour" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Reda Al Bodour</div><div class="tutorprofileemail"><a href="mailto:ab3505@coventry.ac.uk">ab3505@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=27766"><img src="https://secure.gravatar.com/avatar/31e20d25cd9ba4c2b9dc7de50f29b100?s=100&amp;d=identicon" alt="Picture of Kamal Bentahar" title="Picture of Kamal Bentahar" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Kamal Bentahar</div><div class="tutorprofileemail"><a href="mailto:ab3735@coventry.ac.uk">ab3735@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=27866"><img src="https://secure.gravatar.com/avatar/8e46cbe0e022e8ab01c21a6d6e943031?s=100&amp;d=identicon" alt="Picture of Ahmad Reeves" title="Picture of Ahmad Reeves" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Ahmad Reeves</div><div class="tutorprofileemail"><a href="mailto:ab0373@coventry.ac.uk">ab0373@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=27975"><img src="https://secure.gravatar.com/avatar/f80d7491bb13ef0a72350c8784d894f8?s=100&amp;d=identicon" alt="Picture of Xiang Fei" title="Picture of Xiang Fei" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Xiang Fei</div><div class="tutorprofileemail"><a href="mailto:aa5861@coventry.ac.uk">aa5861@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=28498"><img src="https://secure.gravatar.com/avatar/37ebbea258dfd8c01a665d47b3ce9d66?s=100&amp;d=identicon" alt="Picture of Hong Guo" title="Picture of Hong Guo" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Hong Guo</div><div class="tutorprofileemail"><a href="mailto:csx270@coventry.ac.uk">csx270@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=29110"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/76063/user/icon/adaptable/f1?rev=293603" alt="Picture of David Ellis" title="Picture of David Ellis" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">David Ellis</div><div class="tutorprofileemail"><a href="mailto:edu135@coventry.ac.uk">edu135@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;"><p>Based in WMB20, I am Joint Course Director for the BABM course.  My office hours for Semester 1 2016/17 are:</p>
+                        <p>Mondays 2:30pm - 3:30pm</p>
+                        <p>Thursdays 10am-12pm</p>
+                        <p>You can also email me to arrange an appointment (<a href="mailto:%20edu135@coventry.ac.uk">edu135@coventry.ac.uk</a>)</p></td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=29113"><img src="https://secure.gravatar.com/avatar/a0c1b115cece87c3aaa06dca07296422?s=100&amp;d=identicon" alt="Picture of Richard Lane" title="Picture of Richard Lane" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Richard Lane</div><div class="tutorprofileemail"><a href="mailto:aa9532@coventry.ac.uk">aa9532@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=29114"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/76272/user/icon/adaptable/f1?rev=534097" alt="Picture of Lila White" title="Picture of Lila White" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Lila White</div><div class="tutorprofileemail"><a href="mailto:ab4458@coventry.ac.uk">ab4458@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=29199"><img src="https://secure.gravatar.com/avatar/e35ff690ece6e1a7b598cca7081c9783?s=100&amp;d=identicon" alt="Picture of Simon Jones" title="Picture of Simon Jones" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Simon Jones</div><div class="tutorprofileemail"><a href="mailto:aa9149@coventry.ac.uk">aa9149@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=29358"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/77655/user/icon/adaptable/f1?rev=620005" alt="Picture of Antal Goldschmidt" title="Picture of Antal Goldschmidt" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Antal Goldschmidt</div><div class="tutorprofileemail"><a href="mailto:ab2216@coventry.ac.uk">ab2216@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=29373"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/77932/user/icon/adaptable/f1?rev=5218422" alt="Picture of Carey Pridgeon" title="Picture of Carey Pridgeon" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Carey Pridgeon</div><div class="tutorprofileemail"><a href="mailto:ab0475@coventry.ac.uk">ab0475@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=30121"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/79766/user/icon/adaptable/f1?rev=3559007" alt="Picture of Terry Richards" title="Picture of Terry Richards" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Terry Richards</div><div class="tutorprofileemail"><a href="mailto:ab2213@coventry.ac.uk">ab2213@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=30398"><img src="https://secure.gravatar.com/avatar/653e2260d2af29ec3a3ac620f36e9dae?s=100&amp;d=identicon" alt="Picture of John Halloran" title="Picture of John Halloran" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">John Halloran</div><div class="tutorprofileemail"><a href="mailto:aa1910@coventry.ac.uk">aa1910@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=30525"><img src="https://secure.gravatar.com/avatar/3335a71f2bb5c4a4a065d219e49e1a25?s=100&amp;d=identicon" alt="Picture of Furrkh ASLAM" title="Picture of Furrkh ASLAM" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Furrkh ASLAM</div><div class="tutorprofileemail"><a href="mailto:faslam2@coventry.ac.uk">faslam2@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=30650"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/83876/user/icon/adaptable/f1?rev=1533663" alt="Picture of Ian Bowker" title="Picture of Ian Bowker" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Ian Bowker</div><div class="tutorprofileemail"><a href="mailto:ab3394@coventry.ac.uk">ab3394@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=30680"><img src="https://secure.gravatar.com/avatar/c12f70cbe526d40d6b69c766d8818f42?s=100&amp;d=identicon" alt="Picture of Mark Bennett" title="Picture of Mark Bennett" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Mark Bennett</div><div class="tutorprofileemail"><a href="mailto:ab3727@coventry.ac.uk">ab3727@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=30701"><img src="https://secure.gravatar.com/avatar/714daba5f074f05649b1612f46eb46d0?s=100&amp;d=identicon" alt="Picture of Amanda Hardy (Admin)" title="Picture of Amanda Hardy (Admin)" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Amanda Hardy (Admin)</div><div class="tutorprofileemail"><a href="mailto:a.hardy@coventry.ac.uk">a.hardy@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=30815"><img src="https://secure.gravatar.com/avatar/b5b9e13bf70d4e0ea4b9ced7bb2c2ce0?s=100&amp;d=identicon" alt="Picture of Dianabasi Nkantah" title="Picture of Dianabasi Nkantah" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Dianabasi Nkantah</div><div class="tutorprofileemail"><a href="mailto:ab0480@coventry.ac.uk">ab0480@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;"><p><span style="color: #0000ff;"><strong>Theta Support Hours: Tuesday 9am - 11am in ECG-12</strong></span></p></td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=30846"><img src="https://secure.gravatar.com/avatar/809732cb5824a25216c71ffdb8594de9?s=100&amp;d=identicon" alt="Picture of Amritpal Slaich" title="Picture of Amritpal Slaich" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Amritpal Slaich</div><div class="tutorprofileemail"><a href="mailto:csx275@coventry.ac.uk">csx275@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=30864"><img src="https://secure.gravatar.com/avatar/4de80c2d1465514d48ee9bc1766ec947?s=100&amp;d=identicon" alt="Picture of Amanda BROOKS" title="Picture of Amanda BROOKS" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Amanda BROOKS</div><div class="tutorprofileemail"><a href="mailto:brooksa9@coventry.ac.uk">brooksa9@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=31438"><img src="https://secure.gravatar.com/avatar/3a54a327de31c55aba97d899e09d666a?s=100&amp;d=identicon" alt="Picture of Fraz Dar" title="Picture of Fraz Dar" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Fraz Dar</div><div class="tutorprofileemail"><a href="mailto:ab3732@coventry.ac.uk">ab3732@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=31722"><img src="https://secure.gravatar.com/avatar/5ee39885a1342eaee2cd33a26f9ed52d?s=100&amp;d=identicon" alt="Picture of Jon Nolan" title="Picture of Jon Nolan" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Jon Nolan</div><div class="tutorprofileemail"><a href="mailto:aa7919@coventry.ac.uk">aa7919@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=31932"><img src="https://secure.gravatar.com/avatar/1e6aa83e279423f37ea09c6623ec0de9?s=100&amp;d=identicon" alt="Picture of Norlaily Yaacob" title="Picture of Norlaily Yaacob" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Norlaily Yaacob</div><div class="tutorprofileemail"><a href="mailto:csx214@coventry.ac.uk">csx214@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=32037"><img src="https://secure.gravatar.com/avatar/ec8df8872a4aaf127b26ed1b118a9705?s=100&amp;d=identicon" alt="Picture of Tariq Aslam" title="Picture of Tariq Aslam" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Tariq Aslam</div><div class="tutorprofileemail"><a href="mailto:csx277@coventry.ac.uk">csx277@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;"><p>please email me on t.aslam@coventry.ac.uk</p></td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=32409"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/106525/user/icon/adaptable/f1?rev=2477489" alt="Dr Shibani" title="Dr Shibani" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Abdussalam Shibani</div><div class="tutorprofileemail"><a href="mailto:ab1732@coventry.ac.uk">ab1732@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=32837"><img src="https://secure.gravatar.com/avatar/6b482675a9d2800d7daad30eddef382f?s=100&amp;d=identicon" alt="Picture of Slim Khan" title="Picture of Slim Khan" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Slim Khan</div><div class="tutorprofileemail"><a href="mailto:aa9803@coventry.ac.uk">aa9803@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=32843"><img src="https://secure.gravatar.com/avatar/498a47a0fc7504e4b6b960c324ea82fe?s=100&amp;d=identicon" alt="Picture of Craig STEWART" title="Picture of Craig STEWART" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Craig STEWART</div><div class="tutorprofileemail"><a href="mailto:stewar62@coventry.ac.uk">stewar62@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=32848"><img src="https://secure.gravatar.com/avatar/9fad6162616c05eb36df247fac15e17c?s=100&amp;d=identicon" alt="Picture of Ciarán McMullan" title="Picture of Ciarán McMullan" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Ciarán McMullan</div><div class="tutorprofileemail"><a href="mailto:ab3621@coventry.ac.uk">ab3621@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=32869"><img src="https://secure.gravatar.com/avatar/106dacd8e546fd1c8078448db952eaae?s=100&amp;d=identicon" alt="Picture of Rachid Anane" title="Picture of Rachid Anane" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Rachid Anane</div><div class="tutorprofileemail"><a href="mailto:csx220@coventry.ac.uk">csx220@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=32886"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/132729/user/icon/adaptable/f1?rev=1928121" alt="Picture of James Shuttleworth" title="Picture of James Shuttleworth" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">James Shuttleworth</div><div class="tutorprofileemail"><a href="mailto:csx239@coventry.ac.uk">csx239@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=33199"><img src="https://secure.gravatar.com/avatar/5ffd1f06a4131c9cc81d68e1ebcefb92?s=100&amp;d=identicon" alt="Picture of Paul Rouse" title="Picture of Paul Rouse" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Paul Rouse</div><div class="tutorprofileemail"><a href="mailto:aa3491@coventry.ac.uk">aa3491@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=34426"><img src="https://secure.gravatar.com/avatar/8e8d10006f03c8cf42dce95c4d4931c3?s=100&amp;d=identicon" alt="Picture of Faiyaz Doctor" title="Picture of Faiyaz Doctor" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Faiyaz Doctor</div><div class="tutorprofileemail"><a href="mailto:aa9536@coventry.ac.uk">aa9536@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=34931"><img src="https://secure.gravatar.com/avatar/fc50f50f6cd044aad9f11e9246d70424?s=100&amp;d=identicon" alt="Picture of Philip Smith" title="Picture of Philip Smith" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Philip Smith</div><div class="tutorprofileemail"><a href="mailto:aa4426@coventry.ac.uk">aa4426@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=35229"><img src="https://secure.gravatar.com/avatar/424eb720d17dfdca1d8ea3726a1289c5?s=100&amp;d=identicon" alt="Picture of Irene Glendinning" title="Picture of Irene Glendinning" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Irene Glendinning</div><div class="tutorprofileemail"><a href="mailto:csx128@coventry.ac.uk">csx128@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=35308"><img src="https://secure.gravatar.com/avatar/9ee732d9ba958cf756f3adee0db47964?s=100&amp;d=identicon" alt="Picture of Amanda Brooks" title="Picture of Amanda Brooks" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Amanda Brooks</div><div class="tutorprofileemail"><a href="mailto:ab3728@coventry.ac.uk">ab3728@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=35344"><img src="https://secure.gravatar.com/avatar/4f308b9403c6fc701ceee22060fbc2bb?s=100&amp;d=identicon" alt="Picture of Yih-Ling Hedley" title="Picture of Yih-Ling Hedley" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Yih-Ling Hedley</div><div class="tutorprofileemail"><a href="mailto:aa0817@coventry.ac.uk">aa0817@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=35558"><img src="https://secure.gravatar.com/avatar/ed4796b14829deeb6d8416d865fd2834?s=100&amp;d=identicon" alt="Picture of Nazaraf Shah" title="Picture of Nazaraf Shah" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Nazaraf Shah</div><div class="tutorprofileemail"><a href="mailto:aa0699@coventry.ac.uk">aa0699@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=35563"><img src="https://secure.gravatar.com/avatar/81353f93d4f8c878cfdee3181e1f1525?s=100&amp;d=identicon" alt="Picture of Lila WHITE" title="Picture of Lila WHITE" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Lila WHITE</div><div class="tutorprofileemail"><a href="mailto:purswanl@coventry.ac.uk">purswanl@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=35623"><img src="https://secure.gravatar.com/avatar/fb4c85a850428c3e557e2717dd51eed0?s=100&amp;d=identicon" alt="Picture of Antal Goldschmidt" title="Picture of Antal Goldschmidt" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Antal Goldschmidt</div><div class="tutorprofileemail"><a href="mailto:goldscha@coventry.ac.uk">goldscha@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=35650"><img src="https://secure.gravatar.com/avatar/f376e0dea6005e19de64d65abce45489?s=100&amp;d=identicon" alt="Picture of Tim Jeynes" title="Picture of Tim Jeynes" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Tim Jeynes</div><div class="tutorprofileemail"><a href="mailto:ab3731@coventry.ac.uk">ab3731@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=35994"><img src="https://secure.gravatar.com/avatar/33c9302d837be702ac8f003500fcff2c?s=100&amp;d=identicon" alt="Picture of Leonid Smalov" title="Picture of Leonid Smalov" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Leonid Smalov</div><div class="tutorprofileemail"><a href="mailto:csx211@coventry.ac.uk">csx211@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=36455"><img src="https://secure.gravatar.com/avatar/f1b91ee0859a220aeaf3117021379a2b?s=100&amp;d=identicon" alt="Picture of Fraz DAR" title="Picture of Fraz DAR" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Fraz DAR</div><div class="tutorprofileemail"><a href="mailto:darf@coventry.ac.uk">darf@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=36498"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/203415/user/icon/adaptable/f1?rev=665777" alt="Picture of Stephanie Toman" title="Picture of Stephanie Toman" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Stephanie Toman</div><div class="tutorprofileemail"><a href="mailto:aa2663@coventry.ac.uk">aa2663@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;"><p>ECDL Drop-in Sessions on Wednesdays 2-4 pm.</p>
+                        <p>You can book a 1-to-1 session with me or one of the tutors by emailing directly if you are really struggling with an area.</p></td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=38176"><img src="https://secure.gravatar.com/avatar/ae0853c0caaa9facc571c201722a9a16?s=100&amp;d=identicon" alt="Picture of Saad Amin" title="Picture of Saad Amin" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Saad Amin</div><div class="tutorprofileemail"><a href="mailto:csx188@coventry.ac.uk">csx188@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=38662"><img src="https://secure.gravatar.com/avatar/0eea505e12ca234d8f447aa2d6242f57?s=100&amp;d=identicon" alt="Picture of Mark Elshaw" title="Picture of Mark Elshaw" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Mark Elshaw</div><div class="tutorprofileemail"><a href="mailto:ab0487@coventry.ac.uk">ab0487@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=39276"><img src="https://secure.gravatar.com/avatar/9ccbe927a6b11d826af9c2518a8538a1?s=100&amp;d=identicon" alt="Picture of Norlaily YAACOB" title="Picture of Norlaily YAACOB" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Norlaily YAACOB</div><div class="tutorprofileemail"><a href="mailto:yaacobn@coventry.ac.uk">yaacobn@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=39645"><img src="https://secure.gravatar.com/avatar/ffb912b822542d964cc0e3080ccbd7e0?s=100&amp;d=identicon" alt="Picture of John Filippas" title="Picture of John Filippas" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">John Filippas</div><div class="tutorprofileemail"><a href="mailto:csy111@coventry.ac.uk">csy111@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=39938"><img src="https://secure.gravatar.com/avatar/a6fa5ed1fd09156424242e31ba6ae9fd?s=100&amp;d=identicon" alt="Picture of Michael Richards" title="Picture of Michael Richards" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Michael Richards</div><div class="tutorprofileemail"><a href="mailto:aa5999@coventry.ac.uk">aa5999@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=41023"><img src="https://secure.gravatar.com/avatar/22fba93dfe9fb626a5c30a4d277e2513?s=100&amp;d=identicon" alt="Picture of Thomas SINGLETON" title="Picture of Thomas SINGLETON" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Thomas SINGLETON</div><div class="tutorprofileemail"><a href="mailto:singlett@coventry.ac.uk">singlett@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=41112"><img src="https://secure.gravatar.com/avatar/bd3fca38972c8e8143ea4b6338bb96fc?s=100&amp;d=identicon" alt="Picture of Yaseen Chaudhry" title="Picture of Yaseen Chaudhry" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Yaseen Chaudhry</div><div class="tutorprofileemail"><a href="mailto:aa4363@coventry.ac.uk">aa4363@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=41859"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/262132/user/icon/adaptable/f1?rev=555096" alt="Picture of Erik Barrow" title="Picture of Erik Barrow" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Erik Barrow</div><div class="tutorprofileemail"><a href="mailto:ab3065@coventry.ac.uk">ab3065@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;"><p>Monday : 1pm-3:45</p>
+                        <p>Tuesday: 11am - 3:45</p>
+                        <p>Wednesday: 10am-12pm, 1pm-2pm</p>
+                        <p>Thursday: <span>10am-12pm, 1pm-2pm, 3pm-5pm</span></p>
+                        <p><span>Friday: 10am-12pm</span></p></td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=42008"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/262639/user/icon/adaptable/f1?rev=2895623" alt="Picture of Gary Madzudzo" title="Picture of Gary Madzudzo" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Gary Madzudzo</div><div class="tutorprofileemail"><a href="mailto:ab3730@coventry.ac.uk">ab3730@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=42557"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/267764/user/icon/adaptable/f1?rev=918094" alt="Picture of Muzz Khan" title="Picture of Muzz Khan" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Muzz Khan</div><div class="tutorprofileemail"><a href="mailto:ab6258@coventry.ac.uk">ab6258@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;"><p>Semester 1 </p>
+                        <p>Tuesday 10-11am</p>
+                        <p>Friday  1-3pm</p>
+                        <p><span>You can also email me to arrange an appointment (</span><a href="mailto:aa7976@coventry.ac.uk">ab6258@coventry.ac.uk</a><span>) if you cannot see me at the above times.</span></p>
+                        <p> week commencing 28/11/2016 my office hours have changed slightly</p>
+                        <p>to Tuesday 10-11am and Thursday 11-1pm</p></td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=43051"><img src="https://secure.gravatar.com/avatar/5fdb29a3131fd35bab0cfb05221ab829?s=100&amp;d=identicon" alt="Picture of Kashif Iqbal" title="Picture of Kashif Iqbal" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Kashif Iqbal</div><div class="tutorprofileemail"><a href="mailto:ab0160@coventry.ac.uk">ab0160@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=43350"><img src="https://secure.gravatar.com/avatar/fefa4b647967478cc15f417158a2785a?s=100&amp;d=identicon" alt="Picture of Elaine Adams" title="Picture of Elaine Adams" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Elaine Adams</div><div class="tutorprofileemail"><a href="mailto:aa7897@coventry.ac.uk">aa7897@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=44923"><img src="https://secure.gravatar.com/avatar/0f67f0b327c475565af84a1dca5a56b5?s=100&amp;d=identicon" alt="Picture of Tom Ledgard" title="Picture of Tom Ledgard" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Tom Ledgard</div><div class="tutorprofileemail"><a href="mailto:aa8279@coventry.ac.uk">aa8279@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=44936"><img src="https://secure.gravatar.com/avatar/8e1c2d2dbc4f734b90f82007a08715a3?s=100&amp;d=identicon" alt="Picture of Lucian Haralambie" title="Picture of Lucian Haralambie" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Lucian Haralambie</div><div class="tutorprofileemail"><a href="mailto:ab5315@coventry.ac.uk">ab5315@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=45567"><img src="https://secure.gravatar.com/avatar/a497b6e2d58260155e4f36665a68189c?s=100&amp;d=identicon" alt="Picture of Dobrila Petrovic" title="Picture of Dobrila Petrovic" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Dobrila Petrovic</div><div class="tutorprofileemail"><a href="mailto:csx200@coventry.ac.uk">csx200@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=46103"><img src="https://secure.gravatar.com/avatar/565c7a931ff1f22f8c9e42e253b856f1?s=100&amp;d=identicon" alt="Picture of Philip SMITH" title="Picture of Philip SMITH" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Philip SMITH</div><div class="tutorprofileemail"><a href="mailto:smithp36@coventry.ac.uk">smithp36@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=46685"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/372973/user/icon/adaptable/f1?rev=4782622" alt="Picture of Amanda Black" title="Picture of Amanda Black" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Amanda Black</div><div class="tutorprofileemail"><a href="mailto:ab6938@coventry.ac.uk">ab6938@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=49540"><img src="https://secure.gravatar.com/avatar/aba0496f205e0833e3bd39026948bc13?s=100&amp;d=identicon" alt="Picture of Daniel Goldsmith" title="Picture of Daniel Goldsmith" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Daniel Goldsmith</div><div class="tutorprofileemail"><a href="mailto:aa9863@coventry.ac.uk">aa9863@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=50455"><img src="https://secure.gravatar.com/avatar/8bda824e7a0c7f0d22f6bc6fd9f0e673?s=100&amp;d=identicon" alt="Picture of Sandy Taramonli" title="Picture of Sandy Taramonli" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Sandy Taramonli</div><div class="tutorprofileemail"><a href="mailto:ab7680@coventry.ac.uk">ab7680@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=51019"><img src="https://secure.gravatar.com/avatar/79415c3f80a1e61ed029a971cf974dca?s=100&amp;d=identicon" alt="Picture of Ricky Atwal" title="Picture of Ricky Atwal" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Ricky Atwal</div><div class="tutorprofileemail"><a href="mailto:ab0167@coventry.ac.uk">ab0167@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=53305"><img src="https://secure.gravatar.com/avatar/7a912d7fec5f043788af105e477dcbc6?s=100&amp;d=identicon" alt="Picture of Kashif IQBAL" title="Picture of Kashif IQBAL" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Kashif IQBAL</div><div class="tutorprofileemail"><a href="mailto:iqbalk3@coventry.ac.uk">iqbalk3@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=53358"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/516416/user/icon/adaptable/f1?rev=2132358" alt="Picture of Martin Batt" title="Picture of Martin Batt" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Martin Batt</div><div class="tutorprofileemail"><a href="mailto:ab8260@coventry.ac.uk">ab8260@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=53517"><img src="https://secure.gravatar.com/avatar/d3342c540cff521549255f0e7336c323?s=100&amp;d=identicon" alt="Picture of Phillip Smith" title="Picture of Phillip Smith" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Phillip Smith</div><div class="tutorprofileemail"><a href="mailto:ab8507@coventry.ac.uk">ab8507@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=53519"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/523712/user/icon/adaptable/f1?rev=2326824" alt="Picture of Abdulrahman Altahhan" title="Picture of Abdulrahman Altahhan" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Abdulrahman Altahhan</div><div class="tutorprofileemail"><a href="mailto:ab8556@coventry.ac.uk">ab8556@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;"><p>Basically 9-6 unless lecturing</p></td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=53568"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/527769/user/icon/adaptable/f1?rev=2284405" alt="Picture of M-Dyaa Albakour" title="Picture of M-Dyaa Albakour" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">M-Dyaa Albakour</div><div class="tutorprofileemail"><a href="mailto:ab8106@coventry.ac.uk">ab8106@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=58687"><img src="https://secure.gravatar.com/avatar/9aeab8edb52b92742e1ce0adadbde5ba?s=100&amp;d=identicon" alt="Picture of Yaseen QUHILL" title="Picture of Yaseen QUHILL" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Yaseen QUHILL</div><div class="tutorprofileemail"><a href="mailto:quhilly@coventry.ac.uk">quhilly@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=58799"><img src="https://secure.gravatar.com/avatar/c2090ff91545a773ed0238c4adbaae5e?s=100&amp;d=identicon" alt="Picture of Daze Osuide" title="Picture of Daze Osuide" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Daze Osuide</div><div class="tutorprofileemail"><a href="mailto:ab8310@coventry.ac.uk">ab8310@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=60722"><img src="https://secure.gravatar.com/avatar/75afd47bd2ab5638bfb59e0d00e624df?s=100&amp;d=identicon" alt="Picture of Ian Evans" title="Picture of Ian Evans" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Ian Evans</div><div class="tutorprofileemail"><a href="mailto:ab8809@coventry.ac.uk">ab8809@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;"><p><span>Programming Support - ECG-04 - Monday 1 - 2pm, Thursday 2 - 3pm </span></p></td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=61384"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/599461/user/icon/adaptable/f1?rev=3450811" alt="Picture of Mahmoud Awad" title="Picture of Mahmoud Awad" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Mahmoud Awad</div><div class="tutorprofileemail"><a href="mailto:ab8505@coventry.ac.uk">ab8505@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=61434"><img src="https://secure.gravatar.com/avatar/49b620c0ded124359d74232dc19171ac?s=100&amp;d=identicon" alt="Picture of Kam Star" title="Picture of Kam Star" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Kam Star</div><div class="tutorprofileemail"><a href="mailto:kam@playgen.com">kam@playgen.com</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=62027"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/607930/user/icon/adaptable/f1?rev=4301708" alt="Picture of Anmoal Thethi" title="Picture of Anmoal Thethi" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Anmoal Thethi</div><div class="tutorprofileemail"><a href="mailto:edu090@coventry.ac.uk">edu090@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=63891"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/641118/user/icon/adaptable/f1?rev=6121920" alt="Picture of Simon Billings" title="Picture of Simon Billings" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Simon Billings</div><div class="tutorprofileemail"><a href="mailto:ab9160@coventry.ac.uk">ab9160@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;"><p><strong>  Programming Support</strong></p>
+                        <ul><li>Wednesday 1pm ECG.14<br /></li></ul></td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=63946"><img src="https://secure.gravatar.com/avatar/d1f40e6fd90a470f4f73f6c54bce8b29?s=100&amp;d=identicon" alt="Picture of David Nelson" title="Picture of David Nelson" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">David Nelson</div><div class="tutorprofileemail"><a href="mailto:ab9307@coventry.ac.uk">ab9307@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=64119"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/655819/user/icon/adaptable/f1?rev=2746999" alt="Picture of Aaron Law" title="Picture of Aaron Law" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Aaron Law</div><div class="tutorprofileemail"><a href="mailto:ab9304@coventry.ac.uk">ab9304@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=64275"><img src="https://secure.gravatar.com/avatar/a44a1a18cc8339ab59bccc30ec6e34d5?s=100&amp;d=identicon" alt="Picture of Rhiannon Bigham" title="Picture of Rhiannon Bigham" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Rhiannon Bigham</div><div class="tutorprofileemail"><a href="mailto:ab9284@coventry.ac.uk">ab9284@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;"><p>Monday - Friday 9-5</p><p>Please note that during these hours I may be in 1-2-1 appointments and will respond to any emails when possible.<br></p></td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=67546"><img src="https://secure.gravatar.com/avatar/9ceb801787a4ffdfd5712a0a828ecd32?s=100&amp;d=identicon" alt="Picture of Benny Hsu" title="Picture of Benny Hsu" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Benny Hsu</div><div class="tutorprofileemail"><a href="mailto:ab9599@coventry.ac.uk">ab9599@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=67849"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/786961/user/icon/adaptable/f1?rev=3530934" alt="Picture of Matthew England" title="Picture of Matthew England" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Matthew England</div><div class="tutorprofileemail"><a href="mailto:ab9797@coventry.ac.uk">ab9797@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;"><p>See Theta / Programming Support Centre webpages:</p><p><span style="font-size: 12.996px;">https://gitlab.com/coventry-university/programming-support-lab/wikis/home</span><br></p><p><span style="font-size: 12.996px;"><span style="color: rgb(51, 51, 51); font-family: 'Open Sans', sans-serif; font-size: 12.996px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 20px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);">http://computing.coventry.ac.uk/theta/</span><br></span></p></td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=68055"><img src="https://cumoodle.coventry.ac.uk/pluginfile.php/791172/user/icon/adaptable/f1?rev=6739690" alt="Picture of Edyta Kostanek" title="Picture of Edyta Kostanek" class="tutorprofilepicture" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Edyta Kostanek</div><div class="tutorprofileemail"><a href="mailto:ac0431@coventry.ac.uk">ac0431@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;"><p>Office hours in Semester 2 during 2016/117: Thursdays 11:00-13:00 and Fridays 15:00-16:00</p>
+                        <p><span style="color: #ff0000;"><strong>No office hours between: </strong></span><strong>January 23-29 and March 13-17</strong></p>
+                        <p>I am based in room <strong>WM117</strong></p>
+                        <p>Please e-mail me to set up a meeting<strong> (ac0431@coventry.ac.uk)</strong></p></td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=69324"><img src="https://secure.gravatar.com/avatar/4a01cd17dbc1a9c151b314af5bc991f3?s=100&amp;d=identicon" alt="Picture of Asvhini Subramaniam" title="Picture of Asvhini Subramaniam" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Asvhini Subramaniam</div><div class="tutorprofileemail"><a href="mailto:ac0928@coventry.ac.uk">ac0928@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=69473"><img src="https://secure.gravatar.com/avatar/19dd8499fde4d5f40577c7526d2141ac?s=100&amp;d=identicon" alt="Picture of David Croft" title="Picture of David Croft" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">David Croft</div><div class="tutorprofileemail"><a href="mailto:ac0745@coventry.ac.uk">ac0745@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=78514"><img src="https://secure.gravatar.com/avatar/75e8b14391a6128a03108d11e1202379?s=100&amp;d=identicon" alt="Picture of Jim Rowley" title="Picture of Jim Rowley" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Jim Rowley</div><div class="tutorprofileemail"><a href="mailto:aa7696@coventry.ac.uk">aa7696@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=80168"><img src="https://secure.gravatar.com/avatar/af1baa6335cce47481fcafed288d1ed0?s=100&amp;d=identicon" alt="Picture of Sorin Piperca" title="Picture of Sorin Piperca" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Sorin Piperca</div><div class="tutorprofileemail"><a href="mailto:ac1673@coventry.ac.uk">ac1673@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;"><p>Office hours Oct-Dec 2016:</p>
+                        <p>Mondays 13:30 - 15:30</p>
+                        <p>Friday 13:30 - 14:30</p></td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=82546"><img src="https://secure.gravatar.com/avatar/ef88b3379814150d4a0fdb900fdc30f4?s=100&amp;d=identicon" alt="Picture of Mohammed Islam" title="Picture of Mohammed Islam" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Mohammed Islam</div><div class="tutorprofileemail"><a href="mailto:ac2276@coventry.ac.uk">ac2276@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=83605"><img src="https://secure.gravatar.com/avatar/5fa9da8e0658ee14cf172de439aa8286?s=100&amp;d=identicon" alt="Picture of Kirsten Kalns" title="Picture of Kirsten Kalns" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Kirsten Kalns</div><div class="tutorprofileemail"><a href="mailto:ac2116@coventry.ac.uk">ac2116@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=84207"><img src="https://secure.gravatar.com/avatar/ca1e2f82f5d0df3c50a3a521a3f86750?s=100&amp;d=identicon" alt="Picture of Raymond Neo" title="Picture of Raymond Neo" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Raymond Neo</div><div class="tutorprofileemail"><a href="mailto:ac2530@coventry.ac.uk">ac2530@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=84988"><img src="https://secure.gravatar.com/avatar/71c73deec0ab72ec62512b2ab057f5f8?s=100&amp;d=identicon" alt="Picture of Yanguo Jing" title="Picture of Yanguo Jing" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Yanguo Jing</div><div class="tutorprofileemail"><a href="mailto:ac2716@coventry.ac.uk">ac2716@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=85026"><img src="https://secure.gravatar.com/avatar/f76d900fb282cb69a18e9e97734fb2d1?s=100&amp;d=identicon" alt="Picture of Ryan Girling" title="Picture of Ryan Girling" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Ryan Girling</div><div class="tutorprofileemail"><a href="mailto:ac2712@coventry.ac.uk">ac2712@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=85579"><img src="https://secure.gravatar.com/avatar/0c739126329910160b77fddfe3cf5ddb?s=100&amp;d=identicon" alt="Picture of Thomas Lancaster" title="Picture of Thomas Lancaster" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Thomas Lancaster</div><div class="tutorprofileemail"><a href="mailto:ac2717@coventry.ac.uk">ac2717@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=85772"><img src="https://secure.gravatar.com/avatar/9b34c0adfb8f04886c775f9161d399a4?s=100&amp;d=identicon" alt="Picture of Lau Hon-Chuen" title="Picture of Lau Hon-Chuen" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Lau Hon-Chuen</div><div class="tutorprofileemail"><a href="mailto:ac3051@coventry.ac.uk">ac3051@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=85971"><img src="https://secure.gravatar.com/avatar/4ea82fa12e9ae1e5c4f424ebd28586eb?s=100&amp;d=identicon" alt="Picture of Lau Kin Hung" title="Picture of Lau Kin Hung" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Lau Kin Hung</div><div class="tutorprofileemail"><a href="mailto:ac3054@coventry.ac.uk">ac3054@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r0">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=86079"><img src="https://secure.gravatar.com/avatar/78b63f9caae36b1864abee009b5ea3a9?s=100&amp;d=identicon" alt="Picture of Bryan Cheung" title="Picture of Bryan Cheung" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Bryan Cheung</div><div class="tutorprofileemail"><a href="mailto:ac3280@coventry.ac.uk">ac3280@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                        <tr class="r1 lastrow">
+                        <td class="cell c0" style="text-align:left;width:100px;"><a href="https://cumoodle.coventry.ac.uk/user/profile.php?id=88409"><img src="https://secure.gravatar.com/avatar/c73d2c4395181c693b19c0e258f067d3?s=100&amp;d=identicon" alt="Picture of Magesh Nagarajan" title="Picture of Magesh Nagarajan" class="tutorprofilepicture defaultuserpic" width="100" height="100" /></a></td>
+                        <td class="cell c1" style="text-align:left;width:25%;"><div class="tutorprofilename">Magesh Nagarajan</div><div class="tutorprofileemail"><a href="mailto:ac4176@coventry.ac.uk">ac4176@coventry.ac.uk</a></div></td>
+                        <td class="cell c2 lastcol" style="text-align:left;">No office hours available</td>
+                        </tr>
+                    </tbody>  
+                </table>
+                </div>
             </div>
         </div>
     </div>
