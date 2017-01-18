@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, request, session, flash, g
 from functools import wraps
-import sqlite3
+from flask_sqlalchemy import SQLAlchemy
 import os 
 import copy
 import flask
@@ -8,12 +8,10 @@ import json
 import os
 import random
 
+
 # create the application object
 app = flask.Flask(__name__)
-
-# config
 app.secret_key = 'my precious'
-app.database = 'sample.db'
 
 quiz_dir = 'quizzes'
 
@@ -100,7 +98,6 @@ def timetable():
 def availability():
     return render_template('availability.html')  # render a template
 
-# route for handling the login page logic
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
