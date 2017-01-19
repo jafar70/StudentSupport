@@ -1,16 +1,38 @@
 from flask import Flask, render_template, redirect, url_for, request, session, flash, g
+from flask_socketio import SocketIO, emit
+import uuid
 from functools import wraps
-from flask_sqlalchemy import SQLAlchemy
+from forms import ContactForm
+from flask_mail import Message, Mail
 import os 
 import copy
 import flask
 import json
-import os
 import random
 
 
 # create the application object
-app = flask.Flask(__name__)
+app = Flask(__name__, static_url_path='')
+app.config['SECRET_KEY'] = 'secret!'
+
+mail = Mail()
+
+app = Flask(__name__)
+
+app.config['RECAPTCHA_USE_SSL'] = False
+app.config['RECAPTCHA_PUBLIC_KEY'] = '6LfzBxAUAAAAAJLjFD_vn26-TnmC7G7IcVndrwJl'
+app.config['RECAPTCHA_PRIVATE_KEY'] = '6LfzBxAUAAAAAHB4KVHdlwhw7xPoAlCu9y0y4p3o'
+app.config['RECAPTCHA_OPTIONS'] = {'theme': 'white'}
+
+app.config["MAIL_SERVER"] = "smtp.gmail.com"
+app.config["MAIL_PORT"] = 465
+app.config["MAIL_USE_SSL"] = True
+app.config["MAIL_USERNAME"] = 'jsalami60@gmail.com'
+app.config["MAIL_PASSWORD"] = 'osalami20'
+
+mail.init_app(app)
+
+socketio = SocketIO(app)
 app.secret_key = 'my precious'
 
 quiz_dir = 'quizzes'
@@ -124,8 +146,63 @@ def logout():
 def connect_db():
     return sqlite3.connect(app.database)
 
+messages = [{'text': 'Booting system', 'name': 'Bot'},
+            {'text': 'ISS Chat now live!', 'name': 'Bot'}]
+
+users = {}
+
+
+@socketio.on('connect', namespace='/iss')
+def makeConnection():
+    session['uuid'] = uuid.uuid1()
+    session['username'] = 'New user'
+    print('connected')
+    users[session['uuid']] = {'username': 'New user'}
+    
+    for message in messages:
+        print(message)
+        emit('message', message)
+    
+
+@socketio.on('message', namespace='/iss')
+def new_message(message):
+    tmp = {'text': message, 'name': users[session['uuid']]['username']}
+    print(tmp)
+    messages.append(tmp)
+    emit('message', tmp, broadcast=True)
+
+@socketio.on('identify', namespace='/iss')
+def on_identify(message):
+    print('identify ' + message)
+    users[session['uuid']] = {'username': message}
+    
+
+@app.route('/livechat')
+def mainIndex():
+    print 'in hello world'
+    return app.send_static_file('index.html')
+    
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+  form = ContactForm()
+
+  if request.method == 'POST':
+    if form.validate() == False:
+      flash('All fields are required.')
+      return render_template('contact.html', form=form)
+    else:
+      msg = Message(form.subject.data, sender='contact@example.com', recipients=['your_email@example.com'])
+      msg.body = """
+      From: %s <%s>
+      %s
+      """ % (form.name.data, form.email.data, form.message.data)
+      mail.send(msg)
+
+      return render_template('contact.html', success=True)
+
+  elif request.method == 'GET':
+    return render_template('contact.html', form=form)
+
+# start the server
 if __name__ == '__main__':
-    app.debug = True
-    port = int(os.getenv('PORT', 8080))
-    host = os.getenv('IP', '0.0.0.0')
-    app.run(port=port, host=host)    
+        socketio.run(app, host=os.getenv('IP', '0.0.0.0'), port =int(os.getenv('PORT', 8080)), debug=True)
