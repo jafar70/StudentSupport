@@ -1,4 +1,3 @@
-
 .homepage-hero-module {
   border-right: none;
   border-left: none;
@@ -513,4 +512,45 @@ a.socialIcon:hover, .socialHoverClass {
     color: red;
     padding-left: 10px;
 }
+
+.message-bubble 
+{
+    padding: 10px 0px 10px 0px;
+}
+
+.message-bubble:nth-child(even) { background-color: #F5F5F5; }
+
+.message-bubble > *
+{
+    padding-left: 10px;    
+}
+
+.panel-body { padding: 0px; }
+
+.panel-heading { background-color: #3d6da7 !important; color: white !important; }
+
+.nametext{
+    max-width: 280px;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+  .messagelabel{
+    margin-left:0px;
+  }
+  
+  .messagelabel{
+    margin-left:150px;
+  }
+  
+  .messagetext{
+  min-width:400px;
+}
+  
+  
+}
+
+
+    
 

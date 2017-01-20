@@ -18,11 +18,13 @@
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
                     <li><a href="/aboutus">About Us</a></li>
-                    <li class="active"><a href="/faqs">FAQ'S</a></li>
+                    <li><a href="/faqs">FAQ'S</a></li>
                     <li><a href="/availability">Availability</a></li>
+                    <li class="active"><a href="/contact">Contact Us</a></li>
                     {% if session['logged_in'] == True %}
                     <li><a href="/timetable">Timetable</a></li>
                     <li><a href="/Quiz">Quiz</a></li>
+                    <li><a href="/livechat">Chat Room</a></li>
                     {% else %}
                     {% endif %}
                 </ul>

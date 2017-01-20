@@ -1,15 +1,105 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Welcome to Flask!</h1>
-<br>
-<p>Click <a href="/logout">here</a> to logout.</p>
-<br><br>
-<h3>Posts:</h3>
-{% for post in posts %}
-  <strong>Title:</strong> {{ post.title }} <br>
-  <strong>Post:</strong> {{ post.description }} <br>
-<br>
-{% endfor %}
+    <body class="bground">
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Student Support</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse ">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/aboutus">About Us</a></li>
+                    <li><a href="/faqs">FAQ'S</a></li>
+                    <li><a href="/availability">Availability</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                    {% if session['logged_in'] == True %}
+                    <li><a href="/timetable">Timetable</a></li>
+                    <li><a href="/Quiz">Quiz</a></li>
+                    <li class="active"><a href="/livechat">Chat Room</a></li>
+                    {% else %}
+                    {% endif %}
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if session['logged_in'] == True %}
+                    <li><a href="/logout">Logout <span class="sr-only">(current)</span></a></li>
+                    {% else %}
+                    <li><a href="/login">Login <span class="sr-only">(current)</span></a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+        <!--/.container-fluid -->
+    </nav>
+    
+    <div class="parallax-container aboutusPara" data-parallax="scroll" data-bleed="10" data-image-src="{{ url_for('static', filename='img/RAICO-Coventry-University-2.jpg') }}" data-natural-width="750" data-natural-height="763">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h1 class="parallax-title" style="font-size:60px;">Chat Room</h1>
+            </div>
+          </div>
+        </div>
+        <br>
+    </div>
 
+     <div class="container">
+        <div class="container body-white">
+            <div class="row">
+                <h1 class="text-center">Live Chat</h1>
+                <hr class="title-line">
+                 <div class="container">
+                    <div class="row">
+                    <div class="col-md-11">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">Panel heading without title</div>
+                      <div class="panel-body" style="height:600px;overflow-y:scroll;overflow-x: hidden;">
+                        <div class="container" ng-controller="ChatController">
+                          <div class="scroll" id="msgpane">
+                          <div class="row message-bubble">
+                            <p ng-repeat="msg in messages">
+                               <b ng-bind="msg.name" class="text-muted"></b><br>
+                               <span ng-bind="msg.text"></span>
+                            </p>
+                          </div>
+                          </div>
+                        <div class="col-md-11">  
+                        <div class="panel-footer">
+                          <form class="form-inline" ng-submit="send()">
+                            <div class="form-group">
+                              <label>Name:</label>
+                              <input type="text" class="form-control nametext" ng-model="name" ng-change="setName()" placeholder="Username">
+                            </div>
+                            <div class="form-group">
+                              <label class="messagelabel">Message:</label>
+                              
+                              <input type="text" class="form-control messagetext" ng-model="text"  placeholder="..">
+                            </div>
+                            <button type="submit" class="btn btn-default" value="Send" ng-disabled="!name">Send</button>
+                          </form>
+                        </div>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div> 
+               </div>
+                </div>
+            </div>
+       
+
+
+
+                      
 {% endblock %}

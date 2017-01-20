@@ -179,8 +179,7 @@ def on_identify(message):
 
 @app.route('/livechat')
 def mainIndex():
-    print 'in hello world'
-    return app.send_static_file('index.html')
+    return render_template('livechat.html') 
     
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():

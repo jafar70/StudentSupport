@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="ISSChatApp">
 
 <head>
     <meta charset="UTF-8">
@@ -7,10 +7,15 @@
     <title>Student Support</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/coventry.png') }}" type="image/x-icon"> 
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" >
+    <link rel="stylesheet" type="text/css" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" >
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/scrolling-nav.css') }}" >
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/hover-min.css') }}">
     <script src="https://use.fontawesome.com/eee93ac27c.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pygment_trac.css') }}">
+    <meta name="viewport" content="width=device-width">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.4/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='js/controller.js') }}"></script>
 </head>
 
 <body>
@@ -80,6 +85,7 @@
     <script src="{{ url_for('static', filename='js/scrolling-nav.js') }}"></script> 
     <script src="{{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scale.fix.js') }}"></script>
     <script>
         jQuery(document).ready(function($) {
             $('.counter').counterUp({
