@@ -1,45 +1,45 @@
 {
-	"name": "Physics Quiz",
-	"description": "This MCQ is about basic physics. Quiz yourself before you run the test!",
+	"name": "IT Quiz",
+	"description": "This MCQ is about basic computer knowledge. Quiz yourself before you run the test!",
 	"questions": [{
-		"text": "Nuclear sizes are expressed in a unit named?",
+		"text": "_______ are software which is used to do particular task.",
 		"options": [
-			["Fermi", true],
-			["angstrom", false],
-			["newton", false],
-			["tesla", false]
+			["Program", true],
+			["Operating system", false],
+			["Data", false],
+			["Software", false]
 		]
 	}, {
-		"text": "Which instrument is used to record physical happenings at a distant place ?",
+		"text": "________ controls the way in which the computer system functions and provides a means by which users can interact with the computer.",
 		"options": [
-			["Thermostat", false],
-			["Tonometer", false],
-			["Telemeter", true],
-			["Transponder", false]
+			["Application software", false],
+			["The platform", false],
+			["The operating system", true],
+			["The motherboard", false]
 		]
 	}, {
-		"text": "Which instrument is used in submarine to see the objects above sea level ?",
+		"text": "What does HTTP stands for?",
 		"options": [
-			["Pykometer", false],
+			["Head Tail Transfer Protocol", false],
 			["Polygraph", false],
-			["Photometer", false],
-			["Periscope", true]
+			["Hypertext Transfer Plot", false],
+			["Hypertext Transfer Protocol", true]
 		]
 	},{
-		"text": "Name of the instrument to measure atomspheric pressure ?",
+		"text": "Which computer memory is used for storing programs and data currently being processed by the CPU ?",
 		"options": [
-			["Barometer", true],
-			["Barograph", false],
-			["Bolometer", false],
-			["Callipers", false]
+			["Internal memory", true],
+			["Non-volatile memory", false],
+			["Mass memory", false],
+			["PROM", false]
 		]
 	}, {
-		"text": "Which instrument is used to measure altitudes in aircraft's ?",
+		"text": "Which of the following is an example of a binary number?",
 		"options": [
-			["Audiometer", false],
-			["Ammeter", false],
-			["Altimeter", true],
-			["Anemometer", false]
+			["W1BFD3", false],
+			["45364", false],
+			["100101", true],
+			["05546", false]
 		]
 	}]
 }

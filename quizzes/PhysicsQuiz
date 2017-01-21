@@ -1,45 +1,45 @@
 {
-	"name": "IT Quiz",
-	"description": "This MCQ is about basic computer knowledge. Quiz yourself before you run the test!",
+	"name": "Physics Quiz",
+	"description": "This MCQ is about basic physics. Quiz yourself before you run the test!",
 	"questions": [{
-		"text": "_______ are software which is used to do particular task.",
+		"text": "Nuclear sizes are expressed in a unit named?",
 		"options": [
-			["Program", true],
-			["Operating system", false],
-			["Data", false],
-			["Software", false]
+			["Fermi", true],
+			["angstrom", false],
+			["newton", false],
+			["tesla", false]
 		]
 	}, {
-		"text": "________ controls the way in which the computer system functions and provides a means by which users can interact with the computer.",
+		"text": "Which instrument is used to record physical happenings at a distant place ?",
 		"options": [
-			["Application software", false],
-			["The platform", false],
-			["The operating system", true],
-			["The motherboard", false]
+			["Thermostat", false],
+			["Tonometer", false],
+			["Telemeter", true],
+			["Transponder", false]
 		]
 	}, {
-		"text": "What does HTTP stands for?",
+		"text": "Which instrument is used in submarine to see the objects above sea level ?",
 		"options": [
-			["Head Tail Transfer Protocol", false],
+			["Pykometer", false],
 			["Polygraph", false],
-			["Hypertext Transfer Plot", false],
-			["Hypertext Transfer Protocol", true]
+			["Photometer", false],
+			["Periscope", true]
 		]
 	},{
-		"text": "Which computer memory is used for storing programs and data currently being processed by the CPU ?",
+		"text": "Name of the instrument to measure atomspheric pressure ?",
 		"options": [
-			["Internal memory", true],
-			["Non-volatile memory", false],
-			["Mass memory", false],
-			["PROM", false]
+			["Barometer", true],
+			["Barograph", false],
+			["Bolometer", false],
+			["Callipers", false]
 		]
 	}, {
-		"text": "Which of the following is an example of a binary number?",
+		"text": "Which instrument is used to measure altitudes in aircraft's ?",
 		"options": [
-			["W1BFD3", false],
-			["45364", false],
-			["100101", true],
-			["05546", false]
+			["Audiometer", false],
+			["Ammeter", false],
+			["Altimeter", true],
+			["Anemometer", false]
 		]
 	}]
 }
