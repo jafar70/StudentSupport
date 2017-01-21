@@ -1,0 +1,45 @@
+{
+	"name": "Physics Quiz",
+	"description": "This MCQ is about basic physics. Quiz yourself before you run the test!",
+	"questions": [{
+		"text": "Nuclear sizes are expressed in a unit named?",
+		"options": [
+			["Fermi", true],
+			["angstrom", false],
+			["newton", false],
+			["tesla", false]
+		]
+	}, {
+		"text": "Which instrument is used to record physical happenings at a distant place ?",
+		"options": [
+			["Thermostat", false],
+			["Tonometer", false],
+			["Telemeter", true],
+			["Transponder", false]
+		]
+	}, {
+		"text": "Which instrument is used in submarine to see the objects above sea level ?",
+		"options": [
+			["Pykometer", false],
+			["Polygraph", false],
+			["Photometer", false],
+			["Periscope", true]
+		]
+	},{
+		"text": "Name of the instrument to measure atomspheric pressure ?",
+		"options": [
+			["Barometer", true],
+			["Barograph", false],
+			["Bolometer", false],
+			["Callipers", false]
+		]
+	}, {
+		"text": "Which instrument is used to measure altitudes in aircraft's ?",
+		"options": [
+			["Audiometer", false],
+			["Ammeter", false],
+			["Altimeter", true],
+			["Anemometer", false]
+		]
+	}]
+}

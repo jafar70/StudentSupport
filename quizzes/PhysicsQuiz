@@ -1,0 +1,45 @@
+{
+	"name": "IT Quiz",
+	"description": "This MCQ is about basic computer knowledge. Quiz yourself before you run the test!",
+	"questions": [{
+		"text": "_______ are software which is used to do particular task.",
+		"options": [
+			["Program", true],
+			["Operating system", false],
+			["Data", false],
+			["Software", false]
+		]
+	}, {
+		"text": "________ controls the way in which the computer system functions and provides a means by which users can interact with the computer.",
+		"options": [
+			["Application software", false],
+			["The platform", false],
+			["The operating system", true],
+			["The motherboard", false]
+		]
+	}, {
+		"text": "What does HTTP stands for?",
+		"options": [
+			["Head Tail Transfer Protocol", false],
+			["Polygraph", false],
+			["Hypertext Transfer Plot", false],
+			["Hypertext Transfer Protocol", true]
+		]
+	},{
+		"text": "Which computer memory is used for storing programs and data currently being processed by the CPU ?",
+		"options": [
+			["Internal memory", true],
+			["Non-volatile memory", false],
+			["Mass memory", false],
+			["PROM", false]
+		]
+	}, {
+		"text": "Which of the following is an example of a binary number?",
+		"options": [
+			["W1BFD3", false],
+			["45364", false],
+			["100101", true],
+			["05546", false]
+		]
+	}]
+}

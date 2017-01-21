@@ -1,0 +1,45 @@
+{
+	"name": "IT Quiz",
+	"description": "This MCQ is about basic maths knowledge. Quiz yourself before you run the test!",
+	"questions": [{
+		"text": "32 is 40 percent of what number? ",
+		"options": [
+			["12.8", false],
+			["128", false],
+			["80", true],
+			["800", false]
+		]
+	}, {
+		"text": "Three people who work full-time are to work together on a project, but their total time on the project is to be equivalent to that of only one person working full-time. If one of the people is budgeted for one half of his time to the project and a second person for one-third of her time, what part of the third worker’s time should be budgeted to this project?",
+		"options": [
+			["13", false],
+			["35", false],
+			["16", true],
+			["18", false]
+		]
+	}, {
+		"text": "313 – 225 = ?",
+		"options": [
+			["112", false],
+			["115", false],
+			["1415", true],
+			["1115", false]
+		]
+	},{
+		"text": "A soccer team played 160 games and won 65 percent of them. How many games did it win? ",
+		"options": [
+			["94", false],
+			["104", true],
+			["114", false],
+			["124", false]
+		]
+	}, {
+		"text": "Which of the following is the least?",
+		"options": [
+			["0.105", false],
+			["0.501", false],
+			["0.015", true],
+			["0.15", false]
+		]
+	}]
+}

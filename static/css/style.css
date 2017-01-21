@@ -551,6 +551,13 @@ a.socialIcon:hover, .socialHoverClass {
   
 }
 
+#quizlist li > a{
+    font-size: 30px;
 
+}
     
 
+#quizlist{
+    padding-top:20px;
+    padding-bottom: 40px;
+}

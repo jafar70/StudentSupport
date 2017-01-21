@@ -112,6 +112,7 @@ def faqs():
     return render_template('faqs.html')  # render a template
     
 @app.route('/timetable')
+@login_required
 def timetable():
     return render_template('timetable.html')  # render a template
     
@@ -178,6 +179,7 @@ def on_identify(message):
     
 
 @app.route('/livechat')
+@login_required
 def mainIndex():
     return render_template('livechat.html') 
     

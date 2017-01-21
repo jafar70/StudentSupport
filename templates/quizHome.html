@@ -58,9 +58,11 @@
                 <h1 class="text-center">Enter Quiz!</h1>
                 <hr class="title-line">
                 {% for id, name in quiz_names %}
-                    <li><a href="{{url_for('quiz', id=id)}}">{{name}}</a></li>
+                <ul id="quizlist" style="list-style-type: none;">
+                    <center><li><a href="{{url_for('quiz', id=id)}}">{{name}}</a></li></center>
+                </ul>
                 {% endfor %}
-                <br><br><br><br><br><br><br><br>
+                
             </div>
         </div>
     </div>
