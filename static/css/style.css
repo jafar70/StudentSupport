@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
 .homepage-hero-module {
   border-right: none;
   border-left: none;
@@ -555,9 +556,14 @@ a.socialIcon:hover, .socialHoverClass {
     font-size: 30px;
 
 }
-    
 
 #quizlist{
     padding-top:20px;
     padding-bottom: 40px;
 }
+
+.alert-success{
+  display:none;
+  width:40%;  
+}
+

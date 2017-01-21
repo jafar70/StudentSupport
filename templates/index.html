@@ -45,6 +45,13 @@
         <div class="video-container">
             <div class="title-container">
                 <div class="headline">
+                   <div class="container">
+                      {% for message in get_flashed_messages() %}
+                        <div class="alert alert-success" style="display:none;">
+                            <strong>{{ message }}</strong> 
+                        </div>
+                      {% endfor %}
+                   </div>
                     <h1>Student Support</h1>
                 </div>
                 <div class="description">
@@ -61,6 +68,7 @@
             </div>
         </div>
     </div>
+    
 
     <div class="container services">
         <div class="row">
@@ -237,7 +245,7 @@
         </div>
 
     </div>
-
+    
     
 {% endblock %}
 

@@ -21,7 +21,8 @@
 <body>
 
     <!-- child template -->
-    {% block content %}{% endblock %}
+    {% block content %}
+    {% endblock %}
 
     
 
@@ -94,7 +95,15 @@
             });
         });
     </script>
-
+    <script type="text/javascript">
+        $(document).ready(function(){
+            
+          $('.alert-success').show();
+          $('.alert-success').fadeOut(10000,function(){
+            $(".alert-success").hide();
+          })
+        });
+    </script>
 </body>
 
 </html>

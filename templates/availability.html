@@ -55,14 +55,10 @@
     <div class="container">
         <div class="container body-white">
             <div class="row">
-                <!-- errors -->
-                {% if error %}
-                  <p class="error"><strong>Error:</strong> {{ error }}</p>
-                {% endif %}
-            
-                <!-- messages -->
                 {% for message in get_flashed_messages() %}
-                  {{ message }}
+                    <div class="alert alert-success" style="display:none;">
+                        <strong>{{ message }}</strong> 
+                    </div>
                 {% endfor %}
                 <h1 class="text-center">Course Directors</h1>
                 <hr class="title-line">

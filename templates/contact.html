@@ -60,10 +60,10 @@
               <hr class="title-line">
               {% if success %}
                 <p></p>
-                <div class="alert alert-success">
+                <div class="alert alert-info">
                   <p><strong>Thank you for your message!</strong> We'll get back to you shortly.</p>
                 </div>
-              
+                <br><br><br><br>
               {% else %}  
                 {% for message in form.name.errors %}
                   <div class="alert alert-danger">
