@@ -55,11 +55,13 @@
     <div class="container">
         <div class="container body-white">
             <div class="row">
-                {% for message in get_flashed_messages() %}
+                <center>{% for message in get_flashed_messages() %}
                     <div class="alert alert-success" style="display:none;">
                         <strong>{{ message }}</strong> 
                     </div>
                 {% endfor %}
+                </center>
+                
                 <h1 class="text-center">Course Directors</h1>
                 <hr class="title-line">
                 <div class="table-responsive">

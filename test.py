@@ -4,18 +4,60 @@ import unittest
 
 class FlaskTestCase(unittest.TestCase):
 
-    # Ensure that Flask was set up correctly
+    # Ensure that index page was set up correctly
     def test_index(self):
         tester = app.test_client(self)
         response = tester.get('/login', content_type='html/text')
         self.assertEqual(response.status_code, 200)
-
-    # Ensure that the login page loads correctly
-    def test_login_page_loads(self):
+    
+    # Ensure that about us page was set up correctly
+    def test_aboutus(self):
         tester = app.test_client(self)
-        response = tester.get('/login')
-        self.assertIn(b'Please Login', response.data)
-
+        response = tester.get('/aboutus', content_type='html/text')
+        self.assertEqual(response.status_code, 200)
+    
+    # Ensure that FAQ's page was set up correctly
+    def test_faqs(self):
+        tester = app.test_client(self)
+        response = tester.get('/faqs', content_type='html/text')
+        self.assertEqual(response.status_code, 200)
+    
+    # Ensure that FAQ's page was set up correctly
+    def test_contact(self):
+        tester = app.test_client(self)
+        response = tester.get('/contact', content_type='html/text')
+        self.assertEqual(response.status_code, 200)
+    
+    
+    # Ensure that Availability page was set up correctly
+    def test_availability(self):
+        tester = app.test_client()
+        response = tester.post(
+            '/login',
+            data=dict(username="admin", password="admin"),
+            follow_redirects=True
+        )
+        self.assertIn(b'Availability', response.data)
+    
+    # Ensure that Timetable page was set up correctly
+    def test_timetable(self):
+        tester = app.test_client(self)
+        response = tester.get('/timetable', content_type='html/text')
+        self.assertEqual(response.status_code, 302)
+    
+    # Ensure that Quiz page was set up correctly
+    def test_quiz(self):
+        tester = app.test_client(self)
+        response = tester.get('/Quiz', content_type='html/text')
+        self.assertEqual(response.status_code, 200)
+    
+    # Ensure that Chat Room page was set up correctly
+    def test_chatroom(self):
+        tester = app.test_client(self)
+        response = tester.get('/livechat', content_type='html/text')
+        self.assertEqual(response.status_code, 302)
+    
+    
     # Ensure login behaves correctly with correct credentials
     def test_correct_login(self):
         tester = app.test_client()

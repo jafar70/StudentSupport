@@ -121,6 +121,7 @@ def timetable():
 def availability():
     return render_template('availability.html')  # render a template
 
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
@@ -134,7 +135,6 @@ def login():
             return redirect(url_for('availability'))
     return render_template('login.html', error=error)
 
-
 @app.route('/logout')
 @login_required
 def logout():
@@ -143,9 +143,6 @@ def logout():
     return redirect(url_for('home'))
     
 
-# connect to database
-def connect_db():
-    return sqlite3.connect(app.database)
 
 messages = [{'text': 'Booting system', 'name': 'Bot'},
             {'text': 'ISS Chat now live!', 'name': 'Bot'}]
