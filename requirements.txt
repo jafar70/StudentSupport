@@ -20,7 +20,6 @@ click==6.6
 colorama==0.2.5
 configobj==4.7.2
 dominate==2.2.1
-duplicity==0.6.23
 flask-appconfig==0.11.1
 html5lib==0.999
 httplib2==0.8
