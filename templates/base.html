@@ -7,6 +7,7 @@
     <title>Student Support</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/coventry.png') }}" type="image/x-icon"> 
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/videobackground.css') }}">
     <link rel="stylesheet" type="text/css" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" >
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/scrolling-nav.css') }}" >
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/hover-min.css') }}">
@@ -34,7 +35,7 @@
                         <div class="footerWidget">
                             <br>
                             <img src="{{ url_for('static', filename='img/CU-Logo.png') }}" alt="latest Little Neko news" id="footerLogo">
-                            <p>Coventry University is a University. Proin et augue vel nisi rhoncus tincidunt. Cras venenatis, magna id sem ipsum mi interdumlProin et augue vel nisi rhoncus tincidunt. Cras venenatis, magna id sem ipsum mi interduml </p>
+                            <p>Coventry University is a public research university in the city of Coventry, England. The University was formerly known as Lanchester Polytechnic until 1987 and Coventry Polytechnic until it was awarded university status.</p>
                         </div>
                     </div>
                     <div class="col-sm-3">
@@ -68,7 +69,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <p>Copyright © 2016 <a href="http://www.little-neko.com" target="blank"> Coventry University</a> / All rights reserved.</p>
+                        <p>Copyright © 2016 <a href="http://www.coventry.ac.uk/" target="blank"> Coventry University</a> / All rights reserved.</p>
                     </div>
 
                 </div>
@@ -81,12 +82,18 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script> 
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script src="{{ url_for('static', filename='js/parallax.min.js') }}"></script> 
     <script src="{{ url_for('static', filename='js/scrolling-nav.js') }}"></script> 
     <script src="{{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
     <script src="{{ url_for('static', filename='js/scale.fix.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/videobackground.js') }}"></script>
+    <script>
+    $(document).ready(function() {
+        $('#bg-video').videoBackground("https://studentsupport-302cem.herokuapp.com/static/video/BackgroundVideo.mp4");
+    });
+   </script>
     <script>
         jQuery(document).ready(function($) {
             $('.counter').counterUp({

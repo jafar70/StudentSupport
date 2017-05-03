@@ -57,49 +57,54 @@
             <div class="row">
                 <h1 class="text-center">Live Chat</h1>
                 <hr class="title-line">
-                 <div class="container">
+                 <div class="container" ng-controller="ChatController">
                     <div class="row">
                     <div class="col-md-11">
                     <div class="panel panel-default">
                       <div class="panel-heading">Talk about anything.</div>
-                      <div class="panel-body" style="height:600px;overflow-y:scroll;overflow-x: hidden;">
-                        <div class="container" ng-controller="ChatController">
+                      <div id="scroll" class="panel-body" style="height:600px;overflow-y:scroll;overflow-x: hidden;">
+                        <div class="container">
                           <div class="scroll" id="msgpane">
-                          <div class="row message-bubble">
+                          <div class="row message-bubble" >
                             <p ng-repeat="msg in messages">
                                <b ng-bind="msg.name" class="text-muted"></b><br>
                                <span ng-bind="msg.text"></span>
                             </p>
                           </div>
                           </div>
-                        <div class="col-md-11">  
-                        <div class="panel-footer">
-                          <form class="form-inline" ng-submit="send()">
-                            <div class="form-group">
-                              <label>Name:</label>
-                              <input type="text" class="form-control nametext" ng-model="name" ng-change="setName()" placeholder="Username">
-                            </div>
-                            <div class="form-group">
-                              <label class="messagelabel">Message:</label>
-                              
-                              <input type="text" class="form-control messagetext" ng-model="text"  placeholder="..">
-                            </div>
-                            <button type="submit" class="btn btn-default" value="Send" ng-disabled="!name">Send</button>
-                          </form>
-                        </div>
-                        </div>
+                        
                         </div>
                       </div>
                     </div>
                     </div>
+                    
                     </div>
+                    <div class="col-md-11">
+                    <div class="panel-footer">
+                      <form class="form-inline" ng-submit="send()">
+                        <div class="form-group">
+                          <label>Name:</label>
+                          <input type="text" class="form-control nametext" ng-model="name" ng-change="setName()" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                          <label class="messagelabel">Message:</label>
+                          
+                          <input type="text" class="form-control messagetext" ng-model="text"  placeholder="..">
+                        </div>
+                        <button type="submit" class="btn btn-default" value="Send" ng-disabled="!name">Send</button>
+                      </form>
+                    </div>
+                    </div>
+                    
                     </div> 
                </div>
                 </div>
             </div>
        
             <script type="text/javascript">
-                $('.panel-body').scrollTop($('.panel-body')[0].scrollHeight);
+               $(document).ready(function(){
+                    $("#scroll").scrollTop($("#scroll")[0].scrollHeight);
+                });
             </script>
 
 

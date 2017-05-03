@@ -12,7 +12,7 @@ $( document ).ready(function() {
         scaleBannerVideoSize('.video-container .poster img');
         scaleBannerVideoSize('.video-container .filter');
         scaleBannerVideoSize('.video-container video');
-    });
+    }); 
 
 });
 
@@ -38,7 +38,7 @@ function initBannerVideoSize(element){
 
 }
 
-function scaleBannerVideoSize(element){
+ function scaleBannerVideoSize(element){
 
     var windowWidth = $(window).width(),
         windowHeight = $(window).height(),

@@ -40,7 +40,7 @@
         <!--/.container-fluid -->
     </nav>
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
+    <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="homepage-hero-module">
         <div class="video-container">
             <div class="title-container">
@@ -63,14 +63,16 @@
             </div>
             <div class="filter"></div>
             <video autoplay loop class="fillWidth">
-                <source src="{{ url_for('static', filename='video/BackgroundVideo.mp4') }}" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.</video>
+                <source src="" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.</video>
             <div class="poster hidden">
                 <img src="https://androidcentral.us/wp-content/uploads/2014/06/low-poly-texture-17.png" alt="">
             </div>
         </div>
     </div>
     
-   
+    
+   <div id="bg-video"></div>
+    
 
     <div class="container services">
         <div class="row">
@@ -78,21 +80,21 @@
                 <center>
                     <img src="{{ url_for('static', filename='img/computericon.png') }}">
                     <h3>Programming Support</h3>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cur modo, tortor mauris con</p>
+                    <p>We provide programming support for students who need help with C, C++, Python, VBA, JavaScript, MATLAB  or  Java.</p>
                 </center>
             </div>
             <div class="col-md-4">
                 <center>
                     <img src="{{ url_for('static', filename='img/mathsicon.png') }}" >
                     <h3>Maths Support Centre</h3>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cur modo, tortor mauris con</p>
+                    <p>Maths Support is a drop-in service which is available for help with any mathematical topic you need for your studies.</p>
                 </center>
             </div>
             <div class="col-md-4">
                 <center>
                     <img src="{{ url_for('static', filename='img/electronicsicon.png') }}">
                     <h3>Electronics Support</h3>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cur modo, tortor mauris con</p>
+                    <p>Our Faculty of Engineering team have specialised knowledge of the career fields popular with engineering students.</p>
                 </center>
             </div>
         </div>
@@ -168,7 +170,7 @@
 
     <div class="container services">
         <h1 class="text-center services-title">What We Provide</h1>
-        <p class="text-center">Integer odio ligula, tincidunt id volutpat et, imperdiet eget mi. Quisque laoreet porttitor turpis sed fermentum. Nullam sodales blandit nisi, tristique tempor nunc hendrerit at. Sed posuere mollis orci</p>
+        <p class="text-center">As a Coventry University student you are provided with extensive support services throughout your studies. You will have access to essential academic support as well as practical support, such as finance, healthcare and faith services.</p>
 
         <div class="col-md-4 list-info">
             <span class="icon"><span class="fa-stack fa-lg">
@@ -176,7 +178,7 @@
               <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
             </span></span>
             <h4 class="aboutus-text">Outstanding Support</h4>
-            <p class="">Proin et augue vel nisi rhoncus tincidunt. Cras venenatis</p>
+            <p class="">Coventry University's has been awarded for Outstanding Student Support</p>
         </div>
         <div class="col-md-4 list-info">
             <span class="icon"><span class="fa-stack fa-lg">
@@ -184,7 +186,7 @@
               <i class="fa fa-users fa-stack-1x fa-inverse"></i>
             </span></span>
             <h4 class="aboutus-text">Friendly</h4>
-            <p class="">Proin et augue vel nisi rhoncus tincidunt. Cras venenatis</p>
+            <p class="">The Student Support Advisor provides a friendly service for students</p>
         </div>
         <div class="col-md-4 list-info">
             <span class="icon"><span class="fa-stack fa-lg">
@@ -192,7 +194,7 @@
               <i class="fa fa-money fa-stack-1x fa-inverse"></i>
             </span></span>
             <h4 class="aboutus-text">Free</h4>
-            <p class="">Proin et augue vel nisi rhoncus tincidunt. Cras venenatis</p>
+            <p class="">We offer free, impartial, non-judgemental and confidential advice</p>
         </div>
         <div class="col-md-4 list-info">
             <span class="icon"><span class="fa-stack fa-lg">
@@ -200,7 +202,7 @@
               <i class="fa fa-calendar fa-stack-1x fa-inverse"></i>
             </span></span>
             <h4 class="aboutus-text">Flexible</h4>
-            <p class="">Proin et augue vel nisi rhoncus tincidunt. Cras venenatis</p>
+            <p class="">We have a flexible schedule for students who require support for their coursework</p>
         </div>
         <div class="col-md-4 list-info">
             <span class="icon"><span class="fa-stack fa-lg">
@@ -208,7 +210,7 @@
               <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
             </span></span>
             <h4 class="aboutus-text">Customizable </h4>
-            <p class="">Proin et augue vel nisi rhoncus tincidunt. Cras venenatis</p>
+            <p class="">Our mission is to give customised attention to Coventry University students.  </p>
         </div>
         <div class="col-md-4 list-info">
             <span class="icon"><span class="fa-stack fa-lg">
@@ -216,7 +218,7 @@
               <i class="fa fa-user-plus fa-stack-1x fa-inverse"></i>
             </span></span>
             <h4 class="aboutus-text">Patient</h4>
-            <p class="">Proin et augue vel nisi rhoncus tincidunt. Cras venenatis</p>
+            <p class="">Our Student Support Advisor are patient and willing to help students.</p>
         </div>
     </div>
 
@@ -228,7 +230,7 @@
                     <center><img class="img-responsive img-circle lecturers" src="{{ url_for('static', filename='img/Mike_Tyers.jpeg') }}" alt="Mark Tyers display picture"></center>
                     <h3>Mark Tyers</h3>
                     <h4>Programming Lecturer</h4>
-                    <p>" Proin et augue vel nisi rhoncus tincidunt. Cras venenatis, magna id sem ipsum mi interduml "</p>
+                    <p>" If you take responsibility for yourself, you will develop a hunger to accomplish your dreams. "</p>
                 </div>
             </div>
             <div class="col-lg-4 div-lecturer">
@@ -236,7 +238,7 @@
                     <center><img class="img-responsive img-circle lecturers" src="{{ url_for('static', filename='img/frank_ocean.jpg') }}" alt="Frank Ocean display picture"></center>
                     <h3>Frank Ocean</h3>
                     <h4>Maths Lecturer</h4>
-                    <p>" Proin et augue vel nisi rhoncus tincidunt. Cras venenatis, magna id sem ipsum mi interduml "</p>
+                    <p>" A mathematician who is not also something of a poet will never be a complete mathematician. "</p>
                 </div>
             </div>
             <div class="col-lg-4 div-lecturer">
@@ -244,7 +246,7 @@
                     <center><img class="img-responsive img-circle lecturers" src="{{ url_for('static', filename='img/theresa-may.jpeg') }}" alt="Theresa May display picture"></center>
                     <h3>Theresa May</h3>
                     <h4>Engineering Lecturer</h4>
-                    <p>" Proin et augue vel nisi rhoncus tincidunt. Cras venenatis, magna id sem ipsum mi interduml "</p>
+                    <p>" It is the supreme art of the teacher to awaken joy in creative expression and knowledge. "</p>
                 </div>
             </div>
         </div>
