@@ -10,8 +10,6 @@ import flask
 import json
 import random
 
-
-
 # create the application object
 app = Flask(__name__, static_url_path='')
 app.config['SECRET_KEY'] = 'secret!'
@@ -28,6 +26,7 @@ app.config['RECAPTCHA_OPTIONS'] = {'theme': 'white'}
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 465
 app.config["MAIL_USE_SSL"] = True
+app.config["MAIL_USE_TLS"] = True
 app.config["MAIL_USERNAME"] = 'oceanfrank304@gmail.com'
 app.config["MAIL_PASSWORD"] = 'osalami20'
 mail.init_app(app)
