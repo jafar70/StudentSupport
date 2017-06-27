@@ -195,8 +195,13 @@ def on_identify(message):
 
 @app.route('/livechat')
 def mainIndex():
-    return render_template('livechat.html') 
-    
+    if 'username' in session:
+        return render_template('livechat.html')
+
+    return render_template('login.html') 
+
+
+
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
   form = ContactForm()
