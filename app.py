@@ -1,6 +1,9 @@
 from flask import Flask, render_template, redirect, url_for, request, session, flash, g
 from flask_socketio import SocketIO, emit
 import uuid
+from flask_pymongo import PyMongo
+import bcrypt
+import os
 from functools import wraps
 from forms import ContactForm
 from flask_mail import Message, Mail
@@ -32,6 +35,40 @@ mail.init_app(app)
 
 socketio = SocketIO(app)
 app.secret_key = 'my precious'
+
+app.config['MONGO_DBNAME'] = 'login-flask'
+app.config['MONGO_URI'] = 'mongodb://salamij:Osalami20_@ds139959.mlab.com:39959/login-flask'
+
+mongo = PyMongo(app)
+
+# use decorators to link the function to a url
+@app.route('/')
+def home():
+    return render_template('index.html')  # render a template
+
+@app.route('/aboutus')
+def aboutus():
+    return render_template('aboutus.html')  # render a template
+    
+@app.route('/faqs')
+def faqs():
+    return render_template('faqs.html')  # render a template
+    
+@app.route('/timetable')
+def timetable():
+    if 'username' in session:
+        return render_template('timetable.html')
+
+    return render_template('login.html')
+
+    
+@app.route('/availability')
+def availability():
+    if 'username' in session:
+        return render_template('availability.html')
+
+    return render_template('login.html')
+
 
 quiz_dir = 'quizzes'
 
@@ -80,68 +117,51 @@ def check_quiz(id):
     return flask.render_template('check_quiz.html', quiz=quiz, question_answer=zip(quiz['questions'], answers_list), correct=number_correct, total=len(answers_list))
 
 
-# login required decorator
-def login_required(f):
-    @wraps(f)
-    def wrap(*args, **kwargs):
-        if 'logged_in' in session:
-            return f(*args, **kwargs)
-        else:
-            flash('You need to login first.')
-            return redirect(url_for('login'))
-    return wrap
+@app.route('/user_login')
+def user_login():
+    if 'username' in session:
+        flash('You were logged in.')
+        return render_template('availability.html')
 
+    return render_template('login.html')
 
-# use decorators to link the function to a url
-@app.route('/')
-def home():
-    return render_template('index.html')  # render a template
-
-@app.route('/welcome')
-def welcome():
-    return render_template('welcome.html')  # render a template
-
-@app.route('/aboutus')
-def aboutus():
-    return render_template('aboutus.html')  # render a template
-    
-@app.route('/faqs')
-def faqs():
-    return render_template('faqs.html')  # render a template
-    
-@app.route('/timetable')
-@login_required
-def timetable():
-    return render_template('timetable.html')  # render a template
-    
-@app.route('/availability')
-@login_required
-def availability():
-    return render_template('availability.html')  # render a template
-
-
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login', methods=['POST'])
 def login():
     error = None
-    if request.method == 'POST':
-        if (request.form['username'] != 'admin') \
-                or request.form['password'] != 'admin':
-            error = 'Invalid Credentials. Please try again.'
-        else:
-            session['logged_in'] = True
-            flash('You were logged in.')
-            return redirect(url_for('availability'))
+    users = mongo.db.users
+    login_user = users.find_one({'name' : request.form['username']})
+
+    if login_user:
+        if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
+            session['username'] = request.form['username']
+            return redirect(url_for('user_login'))
+
+    error = 'Invalid Credentials. Please try again.'
     return render_template('login.html', error=error)
 
+@app.route('/register', methods=['POST', 'GET'])
+def register():
+    if request.method == 'POST':
+        users = mongo.db.users
+        existing_user = users.find_one({'name' : request.form['username']})
+
+        if existing_user is None:
+            hashpass = bcrypt.hashpw(request.form['pass'].encode('utf-8'), bcrypt.gensalt())
+            users.insert({'name' : request.form['username'], 'password' : hashpass})
+            session['username'] = request.form['username']
+            return redirect(url_for('user_login'))
+        
+        error = 'That username already exists!'
+        return render_template('register.html', error=error)
+
+    return render_template('register.html')
+
 @app.route('/logout')
-@login_required
 def logout():
-    session.pop('logged_in', None)
+    session.pop('username', None)
     flash('You were logged out.')
     return redirect(url_for('home'))
-    
-
-
+   
 messages = [{'text': 'Booting system', 'name': 'Bot'},
             {'text': 'Student Support Chat now live!', 'name': 'Bot'}]
 
@@ -174,7 +194,6 @@ def on_identify(message):
     
 
 @app.route('/livechat')
-@login_required
 def mainIndex():
     return render_template('livechat.html') 
     
